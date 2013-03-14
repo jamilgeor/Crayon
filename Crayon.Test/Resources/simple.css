@@ -1,0 +1,10 @@
+.first-class {
+  width: 100%;
+  height: 200px;
+}
+
+#firstId {
+  width: 20px;
+  height: 30px;
+  background-color: #ff00ff;
+}

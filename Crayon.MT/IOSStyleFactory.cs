@@ -9,10 +9,7 @@ namespace Crayon.MT
 {
 	public class IOSStyleFactory : IStyleFactory
 	{
-		public void ProcessProperty (StyleProperty property, object control)
-		{
 
-		}
 	}
 }
 

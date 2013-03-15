@@ -56,5 +56,6 @@
     <Compile Include="StylePropertyHandlerAttribute.cs" />
     <Compile Include="IControlHandler.cs" />
     <Compile Include="ControlHandlerAttribute.cs" />
+    <Compile Include="ControlHandlerFactory.cs" />
   </ItemGroup>
 </Project>

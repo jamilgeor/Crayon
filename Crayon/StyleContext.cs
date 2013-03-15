@@ -7,7 +7,8 @@ namespace Crayon
 {
 	public class StyleContext
 	{
-		IStyleFactory _styleFactory;
+		internal IStyleFactory StyleFactory { get; private set; }
+
 		IStyleProxy _proxy;
 		static StyleContext _current;
 
@@ -30,7 +31,7 @@ namespace Crayon
 		public StyleContext(IStyleFactory factory) : this(factory, new StyleProxy()){}
 		public StyleContext(IStyleFactory factory, IStyleProxy proxy)
 		{
-			_styleFactory = factory;
+			StyleFactory = factory;
 			_proxy = proxy;
 			Current = this;
 		}
@@ -50,9 +51,9 @@ namespace Crayon
 			ProcessStyleProperties (_proxy.GetStylesByClass (styleClass), targetControl);
 		}
 
-		void ProcessStyleProperties(IEnumerable<StyleProperty> styleProperties, object control)
+		static void ProcessStyleProperties(IEnumerable<StyleProperty> styleProperties, object control)
 		{
-			var controlHandler = FindControlHandler (control);
+			var controlHandler = ControlHandlerFactory.Create (control);
 
 			if (controlHandler == null)
 				return;
@@ -64,39 +65,7 @@ namespace Crayon
 			}
 		}
 
-		IControlHandler FindControlHandler(object control)
-		{
-			var factoryAssembly = Assembly.GetAssembly (_styleFactory.GetType ());
-
-			var types = factoryAssembly.GetTypes ();
-
-			foreach (var type in types) {
-				var attributes = type.GetCustomAttributes(typeof(ControlHandlerAttribute), true);
-
-				foreach (var attribute in attributes) {
-					var castAttribute = (ControlHandlerAttribute)attribute;
-
-					if (CanHandleType(control.GetType(), castAttribute.ControlType))
-						return (IControlHandler)factoryAssembly.CreateInstance(type.FullName);
-				}
-			}
-
-			return null;
-		}
-
-		static bool CanHandleType (Type type, Type typeToMatch)
-		{
-			if (type == typeToMatch) {
-				return true;
-			}
-
-			if (type.BaseType != null)
-				return CanHandleType (type.BaseType, typeToMatch);
-
-			return false;
-		}
-
-		void InvokeStylePropertySetter(IControlHandler controlHandler, StyleProperty property)
+		static void InvokeStylePropertySetter(IControlHandler controlHandler, StyleProperty property)
 		{
 			var methods = controlHandler.GetType ().GetMethods ();
 

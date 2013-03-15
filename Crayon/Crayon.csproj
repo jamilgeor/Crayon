@@ -43,19 +43,21 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="CSS\" />
+    <Folder Include="Attribute\" />
+    <Folder Include="Interface\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="IStyleFactory.cs" />
     <Compile Include="StyleProperty.cs" />
     <Compile Include="StyleContext.cs" />
     <Compile Include="CSS\StyleProxy.cs" />
     <Compile Include="CSS\IStyleProxy.cs" />
-    <Compile Include="StyleTermHandlerAttribute.cs" />
     <Compile Include="StylePropertyFactory.cs" />
-    <Compile Include="StylePropertyHandlerAttribute.cs" />
-    <Compile Include="IControlHandler.cs" />
-    <Compile Include="ControlHandlerAttribute.cs" />
     <Compile Include="ControlHandlerFactory.cs" />
+    <Compile Include="Attribute\StylePropertyHandlerAttribute.cs" />
+    <Compile Include="Attribute\ControlHandlerAttribute.cs" />
+    <Compile Include="Attribute\StyleTermHandlerAttribute.cs" />
+    <Compile Include="Interface\IControlHandler.cs" />
+    <Compile Include="Interface\IStyleFactory.cs" />
   </ItemGroup>
 </Project>

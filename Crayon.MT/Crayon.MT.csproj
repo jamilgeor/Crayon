@@ -41,12 +41,15 @@
   <ItemGroup>
     <Compile Include="UIViewExtensions.cs" />
     <Compile Include="IOSStyleFactory.cs" />
-    <Compile Include="UIViewDecorator.cs" />
+    <Compile Include="Decorators\UIViewDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">
       <Project>{F6AE7771-9F38-4B58-B1C6-CB342A87BECA}</Project>
       <Name>Crayon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Decorators\" />
   </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Crayon
 {
-	internal class ControlHandlerFactory
+	internal class ControlDecoratorFactory
 	{
 		internal static IControlDecorator Create(object control)
 		{

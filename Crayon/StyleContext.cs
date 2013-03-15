@@ -53,7 +53,7 @@ namespace Crayon
 
 		static void ProcessStyleProperties(IEnumerable<StyleProperty> styleProperties, object control)
 		{
-			var controlHandler = ControlHandlerFactory.Create (control);
+			var controlHandler = ControlDecoratorFactory.Create (control);
 
 			if (controlHandler == null)
 				return;

@@ -52,11 +52,11 @@
     <Compile Include="CSS\StyleProxy.cs" />
     <Compile Include="CSS\IStyleProxy.cs" />
     <Compile Include="StylePropertyFactory.cs" />
-    <Compile Include="ControlHandlerFactory.cs" />
     <Compile Include="Attribute\StylePropertyHandlerAttribute.cs" />
     <Compile Include="Attribute\ControlHandlerAttribute.cs" />
     <Compile Include="Attribute\StyleTermHandlerAttribute.cs" />
     <Compile Include="Interface\IStyleFactory.cs" />
     <Compile Include="Interface\IControlDecorator.cs" />
+    <Compile Include="ControlDecoratorFactory.cs" />
   </ItemGroup>
 </Project>

@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="UIViewExtensions.cs" />
     <Compile Include="IOSStyleFactory.cs" />
-    <Compile Include="UIViewHandler.cs" />
+    <Compile Include="UIViewDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

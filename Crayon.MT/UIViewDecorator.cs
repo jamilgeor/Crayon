@@ -7,7 +7,7 @@ using Crayon;
 namespace Crayon.MT
 {
 	[ControlHandler(typeof(UIView))]
-	public class UIViewHandler : IControlHandler
+	public class UIViewDecorator : IControlDecorator
 	{
 		UIView _view;
 

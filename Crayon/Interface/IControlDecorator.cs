@@ -2,7 +2,7 @@ using System;
 
 namespace Crayon
 {
-	public interface IControlHandler
+	public interface IControlDecorator
 	{
 		void SetControl(object control);
 	}

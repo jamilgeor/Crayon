@@ -65,7 +65,7 @@ namespace Crayon
 			}
 		}
 
-		static void InvokeStylePropertySetter(IControlHandler controlHandler, StyleProperty property)
+		static void InvokeStylePropertySetter(IControlDecorator controlHandler, StyleProperty property)
 		{
 			var methods = controlHandler.GetType ().GetMethods ();
 

@@ -5,7 +5,7 @@ namespace Crayon
 {
 	internal class ControlHandlerFactory
 	{
-		internal static IControlHandler Create(object control)
+		internal static IControlDecorator Create(object control)
 		{
 			var factoryAssembly = Assembly.GetAssembly (StyleContext.Current.StyleFactory.GetType ());
 			
@@ -18,7 +18,7 @@ namespace Crayon
 					var castAttribute = (ControlHandlerAttribute)attribute;
 					
 					if (CanHandleType(control.GetType(), castAttribute.ControlType))
-						return (IControlHandler)factoryAssembly.CreateInstance(type.FullName);
+						return (IControlDecorator)factoryAssembly.CreateInstance(type.FullName);
 				}
 			}
 			

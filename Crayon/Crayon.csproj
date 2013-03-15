@@ -41,7 +41,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="CSS\" />
     <Folder Include="Attribute\" />
     <Folder Include="Interface\" />

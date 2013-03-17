@@ -1,6 +1,7 @@
 using System;
+using System.Drawing;
 
-namespace System.Drawing {
+namespace Crayon.Util {
 	
 	public sealed class ColorTranslator {
 		

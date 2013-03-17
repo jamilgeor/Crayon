@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="CSS\" />
+    <Folder Include="Core\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -101,7 +101,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
-    <Compile Include="CSS\StyleProxyFact.cs" />
+    <Compile Include="Core\CSS\StyleProxyFact.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

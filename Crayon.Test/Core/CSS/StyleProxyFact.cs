@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 using Crayon;
 
-namespace Crayon.Test
+namespace Crayon.Test.Core
 {
 	public class StyleProxyFact
 	{
@@ -57,7 +57,7 @@ namespace Crayon.Test
 			[Test]
 			public void StyleId_Defined_Once()
 			{
-				const int expectedNumberOfStyles = 2;
+				const int expectedNumberOfStyles = 3;
 				const int expectedWidth = 20;
 				const int expectedHeight = 30;
 

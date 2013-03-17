@@ -36,6 +36,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="OpenTK" />
     <Reference Include="ExCSS.MT">
       <HintPath>..\Libs\ExCSS.MT.dll</HintPath>
     </Reference>
@@ -44,6 +45,7 @@
     <Folder Include="CSS\" />
     <Folder Include="Attribute\" />
     <Folder Include="Interface\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -58,5 +60,6 @@
     <Compile Include="Interface\IStyleFactory.cs" />
     <Compile Include="Interface\IControlDecorator.cs" />
     <Compile Include="ControlDecoratorFactory.cs" />
+    <Compile Include="Util\ColorTranslator.cs" />
   </ItemGroup>
 </Project>

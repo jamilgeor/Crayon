@@ -5,4 +5,8 @@
 
 #sample-button {
 	width: 200px;
+	opacity: 0.5;
+	top: 50px;
+	left: 75px;
+	color: #00FF00;
 }

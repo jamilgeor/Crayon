@@ -1,12 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace Crayon
 {
 	internal class ControlDecoratorFactory
 	{
-		internal static IControlDecorator Create(object control)
+		internal static List<IControlDecorator> Create(object control)
 		{
+			var decorators = new List<IControlDecorator> ();
 			var factoryAssembly = Assembly.GetAssembly (StyleContext.Current.StyleFactory.GetType ());
 			
 			var types = factoryAssembly.GetTypes ();
@@ -18,11 +20,11 @@ namespace Crayon
 					var castAttribute = (ControlHandlerAttribute)attribute;
 					
 					if (CanHandleType(control.GetType(), castAttribute.ControlType))
-						return (IControlDecorator)factoryAssembly.CreateInstance(type.FullName);
+						decorators.Add((IControlDecorator)factoryAssembly.CreateInstance(type.FullName));
 				}
 			}
 			
-			return null;
+			return decorators;
 		}
 		
 		static bool CanHandleType (Type type, Type typeToMatch)

@@ -14,10 +14,10 @@ namespace Crayon
 			var types = factoryAssembly.GetTypes ();
 			
 			foreach (var type in types) {
-				var attributes = type.GetCustomAttributes(typeof(ControlHandlerAttribute), true);
+				var attributes = type.GetCustomAttributes(typeof(ControlDecoratorAttribute), true);
 				
 				foreach (var attribute in attributes) {
-					var castAttribute = (ControlHandlerAttribute)attribute;
+					var castAttribute = (ControlDecoratorAttribute)attribute;
 					
 					if (CanHandleType(control.GetType(), castAttribute.ControlType))
 						decorators.Add((IControlDecorator)factoryAssembly.CreateInstance(type.FullName));

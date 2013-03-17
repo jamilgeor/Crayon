@@ -5,7 +5,7 @@ using Crayon;
 
 namespace Crayon.MT
 {
-	[ControlHandler(typeof(UIButton))]
+	[ControlDecorator(typeof(UIButton))]
 	public class UIButtonDecorator : IControlDecorator
 	{
 		UIButton _buttonView;

@@ -4,9 +4,9 @@ using System.Reflection;
 
 namespace Crayon
 {
-	internal class ControlDecoratorFactory : BaseFactory
+	public class ControlDecoratorFactory : BaseFactory
 	{
-		internal static List<IControlDecorator> Create(object control)
+		public static List<IControlDecorator> Create(object control)
 		{
 			var decorators = new List<IControlDecorator> ();
 			var factoryAssembly = Assembly.GetAssembly (StyleContext.Current.StyleFactory.GetType ());

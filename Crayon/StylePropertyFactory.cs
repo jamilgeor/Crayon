@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Crayon
 {
-	public static class StylePropertyFactory
+	public class StylePropertyFactory : BaseFactory
 	{
 		public static StyleProperty Create(string term)
 		{
@@ -19,7 +19,7 @@ namespace Crayon
 
 		static Type FindStylePropertyTypeByTerm(string term, Assembly assembly)
 		{
-			var types = assembly.GetTypes().Where(t => t.BaseType != null && t.BaseType.FullName == typeof(StyleProperty).FullName);
+			var types = assembly.GetTypes().Where(t => t.BaseType != null && CanHandleType(t, typeof(StyleProperty)));
 			
 			foreach (var type in types) 
 			{

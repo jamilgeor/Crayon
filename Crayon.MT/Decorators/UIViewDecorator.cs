@@ -16,34 +16,40 @@ namespace Crayon.MT
 			_view = (UIView)control;
 		}
 
-		[StylePropertyHandlerAttribute(typeof(StyleWidthProperty))]
+		[StylePropertyHandler(typeof(StyleWidthProperty))]
 		public void SetWidth(StyleWidthProperty property)
 		{
 			_view.Frame = new RectangleF(_view.Frame.X, _view.Frame.Y, property.Width, _view.Frame.Height);
 		}
 
-		[StylePropertyHandlerAttribute(typeof(StyleHeightProperty))]
+		[StylePropertyHandler(typeof(StyleHeightProperty))]
 		public void SetHeight(StyleHeightProperty property)
 		{
 			_view.Frame = new RectangleF(_view.Frame.X, _view.Frame.Y, _view.Frame.Width, property.Height);
 		}
 
-		[StylePropertyHandlerAttribute(typeof(StyleOpacityProperty))]
+		[StylePropertyHandler(typeof(StyleOpacityProperty))]
 		public void SetOpacity(StyleOpacityProperty property)
 		{
 			_view.Alpha = property.Opacity;
 		}
 
-		[StylePropertyHandlerAttribute(typeof(StyleTopProperty))]
+		[StylePropertyHandler(typeof(StyleTopProperty))]
 		public void SetTop(StyleTopProperty property)
 		{
 			_view.Frame = new RectangleF(_view.Frame.X, property.Top, _view.Frame.Width, _view.Frame.Height);
 		}
 
-		[StylePropertyHandlerAttribute(typeof(StyleLeftProperty))]
+		[StylePropertyHandler(typeof(StyleLeftProperty))]
 		public void SetLeft(StyleLeftProperty property)
 		{
 			_view.Frame = new RectangleF(property.Left, _view.Frame.Y, _view.Frame.Width, _view.Frame.Height);
+		}
+
+		[StylePropertyHandler(typeof(StyleBackgroundColorProperty))]
+		public void SetBackgroundColor(StyleColorProperty property)
+		{
+			_view.BackgroundColor = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 		}
 	}
 }

@@ -12,12 +12,11 @@ namespace Crayon.MT
 		
 		public void SetControl(object control)
 		{
-			//base.SetControl (control);
 			_buttonView = (UIButton)control;
 		}
 
-		[StylePropertyHandlerAttribute(typeof(StyleColorProperty))]
-		public void SetWidth(StyleColorProperty property)
+		[StylePropertyHandler(typeof(StyleColorProperty))]
+		public void SetColor(StyleColorProperty property)
 		{
 			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 			_buttonView.SetTitleColor (color, UIControlState.Normal);

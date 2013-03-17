@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Crayon
 {
-	internal class ControlDecoratorFactory
+	internal class ControlDecoratorFactory : BaseFactory
 	{
 		internal static List<IControlDecorator> Create(object control)
 		{
@@ -25,18 +25,6 @@ namespace Crayon
 			}
 			
 			return decorators;
-		}
-		
-		static bool CanHandleType (Type type, Type typeToMatch)
-		{
-			if (type == typeToMatch) {
-				return true;
-			}
-			
-			if (type.BaseType != null)
-				return CanHandleType (type.BaseType, typeToMatch);
-			
-			return false;
 		}
 	}
 }

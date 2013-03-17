@@ -12,7 +12,7 @@ namespace Crayon
 		public abstract void SetValue (string value);
 	}
 
-	[StyleTermHandlerAttribute("width")]
+	[StyleTermHandler("width")]
 	public class StyleWidthProperty : StyleProperty
 	{
 		public int Width { get { return (int)Value; } }
@@ -23,7 +23,7 @@ namespace Crayon
 		}
 	}
 
-	[StyleTermHandlerAttribute("height")]
+	[StyleTermHandler("height")]
 	public class StyleHeightProperty : StyleProperty
 	{
 		public int Height { get { return (int)Value; } }
@@ -34,7 +34,7 @@ namespace Crayon
 		}
 	}
 
-	[StyleTermHandlerAttribute("opacity")]
+	[StyleTermHandler("opacity")]
 	public class StyleOpacityProperty : StyleProperty
 	{
 		public float Opacity { get { return (float)Value; } }
@@ -45,7 +45,7 @@ namespace Crayon
 		}
 	}
 
-	[StyleTermHandlerAttribute("top")]
+	[StyleTermHandler("top")]
 	public class StyleTopProperty : StyleProperty
 	{
 		public int Top { get { return (int)Value; } }
@@ -56,7 +56,7 @@ namespace Crayon
 		}
 	}
 
-	[StyleTermHandlerAttribute("left")]
+	[StyleTermHandler("left")]
 	public class StyleLeftProperty : StyleProperty
 	{
 		public int Left { get { return (int)Value; } }
@@ -67,7 +67,7 @@ namespace Crayon
 		}
 	}
 
-	[StyleTermHandlerAttribute("color")]
+	[StyleTermHandler("color")]
 	public class StyleColorProperty : StyleProperty
 	{
 		public Color Color { get { return (Color)Value; } }
@@ -77,5 +77,8 @@ namespace Crayon
 			Value = ColorTranslator.FromHtml (value);
 		}
 	}
+
+	[StyleTermHandler("background-color")]
+	public class StyleBackgroundColorProperty : StyleColorProperty { }
 }
 

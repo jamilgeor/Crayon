@@ -8,5 +8,11 @@
 	</array>
 	<key>MinimumOSVersion</key>
 	<string>3.2</string>
+	<key>CFBundleDisplayName</key>
+	<string>Crayon Sample</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.patternpublishing.crayonsample</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1</string>
 </dict>
 </plist>

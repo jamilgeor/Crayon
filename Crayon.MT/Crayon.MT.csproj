@@ -40,9 +40,9 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="UIViewExtensions.cs" />
-    <Compile Include="IOSStyleFactory.cs" />
     <Compile Include="Decorators\UIViewDecorator.cs" />
     <Compile Include="Decorators\UIButtonDecorator.cs" />
+    <Compile Include="IOSDeviceContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

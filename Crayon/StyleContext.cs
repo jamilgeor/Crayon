@@ -7,7 +7,7 @@ namespace Crayon
 {
 	public class StyleContext
 	{
-		internal IStyleFactory StyleFactory { get; private set; }
+		internal IDeviceContext StyleFactory { get; private set; }
 
 		IStyleProxy _proxy;
 		static StyleContext _current;
@@ -28,8 +28,8 @@ namespace Crayon
 			}
 		}
 
-		public StyleContext(IStyleFactory factory) : this(factory, new StyleProxy()){}
-		public StyleContext(IStyleFactory factory, IStyleProxy proxy)
+		public StyleContext(IDeviceContext factory) : this(factory, new StyleProxy()){}
+		public StyleContext(IDeviceContext factory, IStyleProxy proxy)
 		{
 			StyleFactory = factory;
 			_proxy = proxy;

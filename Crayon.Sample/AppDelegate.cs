@@ -36,7 +36,7 @@ namespace Crayon.Sample
 			_window = new UIWindow (UIScreen.MainScreen.Bounds);
 			_controller = new UIViewController ();
 
-			_styleContext = new StyleContext (new IOSStyleFactory ());
+			_styleContext = new StyleContext (new IOSDeviceContext ());
 			_styleContext.LoadStyleSheet ("style.css");
 
 			_button = UIButton.FromType (UIButtonType.RoundedRect);

@@ -20,7 +20,7 @@ namespace Crayon.Test
 			[TestFixtureSetUp]
 			public void Setup()
 			{
-				_context = new StyleContext (new IOSStyleFactory ());
+				_context = new StyleContext (new IOSDeviceContext ());
 			}
 
 			[Test]

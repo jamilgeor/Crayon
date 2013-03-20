@@ -13,7 +13,9 @@ namespace Crayon
 	public enum DeviceType
 	{
 		IPad,
-		IPhone
+		IPhone,
+		AndroidTablet,
+		AndroidPhone
 	}
 }
 

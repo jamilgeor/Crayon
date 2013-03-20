@@ -18,7 +18,8 @@ namespace Crayon.MT
 			Media.IsRetina = UIScreen.MainScreen.Scale > 1.0;
 
 			//Need to add device detection.
-			Media.DeviceType = DeviceType.IPhone;
+			Media.DeviceType = UIUserInterfaceIdiom.Pad ? DeviceType.IPad : DeviceType.IPhone;
+
 		}
 	}
 }

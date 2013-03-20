@@ -56,7 +56,7 @@ namespace Crayon.MT
 		[StylePropertyHandler(typeof(StyleBackgroundImageProperty))]
 		public void SetBackgroundImage(StyleBackgroundImageProperty property)
 		{
-			_view.BackgroundColor = UIColor.FromPatternImage (UIImage.FromFile(property.ImageUrl));
+			_view.BackgroundColor = UIColor.FromPatternImage (UIImage.FromFile(property.ImageUrl).CGImage);
 		}
 
 		[StylePropertyHandlerAttribute(typeof(StyleBorderColorProperty))]

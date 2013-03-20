@@ -91,5 +91,11 @@ namespace Crayon
 			Value = value;
 		}
 	}
+
+	[StyleTermHandlerAttribute("border-width")]
+	public class StyleBorderWidthProperty : StyleWidthProperty { }
+
+	[StyleTermHandlerAttribute("border-color")]
+	public class StyleBorderColorProperty : StyleColorProperty { }
 }
 

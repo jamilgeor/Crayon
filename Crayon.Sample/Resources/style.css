@@ -14,4 +14,6 @@
 
 #sample-view {
 	background-image: url('background.jpg');
+	border-color: #DDDDDD;
+	border-width: 5px;
 }

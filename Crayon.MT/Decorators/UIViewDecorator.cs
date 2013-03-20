@@ -51,6 +51,12 @@ namespace Crayon.MT
 		{
 			_view.BackgroundColor = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 		}
+
+		[StylePropertyHandler(typeof(StyleBackgroundImageProperty))]
+		public void SetBackgroundImage(StyleBackgroundImageProperty property)
+		{
+			_view.BackgroundColor = UIColor.FromPatternImage (UIImage.FromFile(property.ImageUrl));
+		}
 	}
 }
 

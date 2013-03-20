@@ -111,5 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\style.css" />
+    <BundleResource Include="Resources\background.jpg" />
   </ItemGroup>
 </Project>

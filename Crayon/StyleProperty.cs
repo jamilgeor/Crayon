@@ -80,5 +80,16 @@ namespace Crayon
 
 	[StyleTermHandler("background-color")]
 	public class StyleBackgroundColorProperty : StyleColorProperty { }
+
+	[StyleTermHandlerAttribute("background-image")]
+	public class StyleBackgroundImageProperty : StyleProperty
+	{
+		public string ImageUrl { get { return (string)Value; } }
+
+		public override void SetValue (string value)
+		{
+			Value = value;
+		}
+	}
 }
 

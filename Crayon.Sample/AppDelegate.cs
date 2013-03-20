@@ -43,8 +43,9 @@ namespace Crayon.Sample
 			_button.SetTitle ("Hello", UIControlState.Normal);
 			_button.SetStyleId ("sample-button");
 
-
 			_controller.View.AddSubview (_button);
+
+			_controller.View.SetStyleId ("sample-view");
 
 			// If you have defined a root view controller, set it here:
 			_window.RootViewController = _controller;

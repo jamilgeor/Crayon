@@ -5,9 +5,13 @@
 
 #sample-button {
 	width: 200px;
-	opacity: 0.5;
+	opacity: 0.7;
 	top: 50px;
 	left: 75px;
 	color: #00FF00;
 	background-color: #0000FF;
+}
+
+#sample-view {
+	background-image: url('background.jpg');
 }

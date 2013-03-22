@@ -109,7 +109,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <BundleResource Include="Resources\bootstrap.css" />
     <BundleResource Include="Resources\simple.css" />
   </ItemGroup>
   <ItemGroup>

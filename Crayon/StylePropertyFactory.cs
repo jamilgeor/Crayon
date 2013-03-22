@@ -23,7 +23,7 @@ namespace Crayon
 			
 			foreach (var type in types) 
 			{
-				var attributes = type.GetCustomAttributes(typeof(StyleTermHandlerAttribute), true);
+				var attributes = type.GetCustomAttributes(typeof(StyleTermAttribute), true);
 
 				foreach (var attribute in attributes)
 				{
@@ -37,7 +37,7 @@ namespace Crayon
 
 		static bool AttributeMatchesTerm(object attribute, string term)
 		{
-			var name = typeof(StyleTermHandlerAttribute).GetProperty("Name").GetValue(attribute, null).ToString();
+			var name = typeof(StyleTermAttribute).GetProperty("Name").GetValue(attribute, null).ToString();
 
 			return name == term;
 		}

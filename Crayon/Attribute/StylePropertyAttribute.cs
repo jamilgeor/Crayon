@@ -3,11 +3,11 @@ using System;
 namespace Crayon
 {
 	[AttributeUsage(AttributeTargets.Method)]
-	public class StylePropertyHandlerAttribute : Attribute
+	public class StylePropertyAttribute : Attribute
 	{
 		public Type StylePropertyType { get; set; }
 
-		public StylePropertyHandlerAttribute (Type stylePropertyType)
+		public StylePropertyAttribute (Type stylePropertyType)
 		{
 			StylePropertyType = stylePropertyType;
 		}

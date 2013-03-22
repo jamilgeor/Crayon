@@ -70,9 +70,9 @@ namespace Crayon
 
 			foreach (var method in methods)
 			{
-				var attributes = method.GetCustomAttributes(typeof(StylePropertyHandlerAttribute), true);
+				var attributes = method.GetCustomAttributes(typeof(StylePropertyAttribute), true);
 
-				if(attributes.Any(a => (a as StylePropertyHandlerAttribute).StylePropertyType == property.GetType()))
+				if(attributes.Any(a => (a as StylePropertyAttribute).StylePropertyType == property.GetType()))
 				{
 					method.Invoke(controlHandler, new object[]{property});
 				}

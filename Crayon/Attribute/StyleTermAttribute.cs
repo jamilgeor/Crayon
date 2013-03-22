@@ -3,11 +3,11 @@ using System;
 namespace Crayon
 {
 	[AttributeUsage(AttributeTargets.Class)]
-	public class StyleTermHandlerAttribute : Attribute
+	public class StyleTermAttribute : Attribute
 	{
 		public string Name { get; set; }
 
-		public StyleTermHandlerAttribute(string name)
+		public StyleTermAttribute(string name)
 		{
 			Name = name;
 		}

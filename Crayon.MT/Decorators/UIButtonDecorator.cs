@@ -15,7 +15,7 @@ namespace Crayon.MT
 			_buttonView = (UIButton)control;
 		}
 
-		[StylePropertyHandler(typeof(StyleColorProperty))]
+		[StyleProperty(typeof(StyleColorProperty))]
 		public void SetColor(StyleColorProperty property)
 		{
 			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);

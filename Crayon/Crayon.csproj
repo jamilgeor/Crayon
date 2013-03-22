@@ -54,8 +54,6 @@
     <Compile Include="CSS\StyleProxy.cs" />
     <Compile Include="CSS\IStyleProxy.cs" />
     <Compile Include="StylePropertyFactory.cs" />
-    <Compile Include="Attribute\StylePropertyHandlerAttribute.cs" />
-    <Compile Include="Attribute\StyleTermHandlerAttribute.cs" />
     <Compile Include="Interface\IControlDecorator.cs" />
     <Compile Include="ControlDecoratorFactory.cs" />
     <Compile Include="Util\ColorTranslator.cs" />
@@ -63,5 +61,7 @@
     <Compile Include="Attribute\ControlDecoratorAttribute.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="Interface\IDeviceContext.cs" />
+    <Compile Include="Attribute\StylePropertyAttribute.cs" />
+    <Compile Include="Attribute\StyleTermAttribute.cs" />
   </ItemGroup>
 </Project>

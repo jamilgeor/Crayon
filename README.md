@@ -9,7 +9,7 @@ An open source CSS implementation for Xamarin mobile development tools
 * Mono for Android (Coming soon)
 
 ### Disclaimer
-This is still in very early development stage, but would love feedback, contributions etc.
+This is still in very early development stage. Would love feedback, contributions etc.
 
 ### Sample
 

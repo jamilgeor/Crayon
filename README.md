@@ -9,12 +9,29 @@ An open source CSS implementation for Xamarin mobile development tools
 * Mono for Android (Coming soon)
 
 
-### Samples
+### Sample
 
 CSS
 
 ```
-#my-button { top: 50px; left: 100px; }
+#sample-button { 
+    height: 55px;
+	width: 200px;
+	opacity: 0.5;
+	top: 50px;
+	left: 75px;
+	color: #FFFFFF;
+	border-radius: 4px;
+	border-width: 2px;
+	border-color: #000000;
+	background-color: #FF0000;
+}
+
+#sample-background {
+	background-image: url('background.jpg');
+	border-color: #DDDDDD;
+	border-width: 5px;
+}
 ```
 
 C#
@@ -28,10 +45,16 @@ using Crayon.MT;
 var styleContext = new StyleContext (new IOSDeviceContext ());
 styleContext.LoadStyleSheet ("style.css");
 
-var button = new UIButton();
-button.SetStyleId("my-button");
+var button = UIButton.FromType (UIButtonType.Custom);
+button.SetStyleId("sample-button");
+
+var background = new UIView();
+background ("sample-background");
+
+background.AddSubview(button);
 
 ```
+![image](https://raw.github.com/jamilgeor/Crayon/master/Images/readme_sample_1.png)
 
 ### Documentation
 [IOS Documentation](https://github.com/jamilgeor/Crayon/wiki/ios-control-progress)

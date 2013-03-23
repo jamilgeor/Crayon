@@ -97,5 +97,16 @@ namespace Crayon
 
 	[StyleTerm("border-color")]
 	public class StyleBorderColorProperty : StyleColorProperty { }
+
+	[StyleTerm("border-radius")]
+	public class StyleBorderRadiusProperty : StyleProperty
+	{
+		public float Radius { get { return (float)Value; } }
+
+		public override void SetValue (string value)
+		{
+			Value = float.Parse (value);
+		}
+	}
 }
 

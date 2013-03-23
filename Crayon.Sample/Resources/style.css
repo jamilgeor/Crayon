@@ -4,15 +4,19 @@
 }
 
 #sample-button {
+	height: 55px;
 	width: 200px;
-	opacity: 0.7;
+	opacity: 0.5;
 	top: 50px;
 	left: 75px;
-	color: #00FF00;
-	background-color: #0000FF;
+	color: #FFFFFF;
+	border-radius: 4px;
+	border-width: 2px;
+	border-color: #000000;
+	background-color: #FF0000;
 }
 
-#sample-view {
+#sample-background {
 	background-image: url('background.jpg');
 	border-color: #DDDDDD;
 	border-width: 5px;

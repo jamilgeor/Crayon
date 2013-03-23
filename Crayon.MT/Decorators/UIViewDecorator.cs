@@ -70,6 +70,13 @@ namespace Crayon.MT
 		{
 			_view.Layer.BorderWidth = property.Width;
 		}
+
+		
+		[StyleProperty(typeof(StyleBorderRadiusProperty))]
+		public void SetRadius(StyleBorderRadiusProperty property)
+		{
+			_view.Layer.CornerRadius = property.Radius;
+		}
 	}
 }
 

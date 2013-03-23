@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Examples\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -97,6 +98,12 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Examples\TableExample.cs" />
+    <Compile Include="Examples\NavigatorExample.cs" />
+    <Compile Include="Examples\ButtonExample.cs" />
+    <Compile Include="ExampleFactory.cs" />
+    <Compile Include="Examples\LabelExample.cs" />
+    <Compile Include="Examples\ImageExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

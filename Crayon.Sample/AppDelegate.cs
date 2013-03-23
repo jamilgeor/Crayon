@@ -21,7 +21,10 @@ namespace Crayon.Sample
 		UIWindow _window;
 		UIButton _button;
 		UILabel _label;
+		UIImageView _image;
 		UIViewController _controller;
+		NavigatorExample _navigator;
+
 		StyleContext _styleContext;
 
 		//
@@ -40,18 +43,10 @@ namespace Crayon.Sample
 			_styleContext = new StyleContext (new IOSDeviceContext ());
 			_styleContext.LoadStyleSheet ("style.css");
 
-			_button = UIButton.FromType (UIButtonType.Custom);
-			_button.SetTitle ("Sample Button", UIControlState.Normal);
-			_button.SetStyleId ("sample-button");
+			_navigator = new NavigatorExample ();
+			_navigator.View.SetStyleId ("sample-navigator");
 
-			_label = new UILabel ();
-			_label.Text = "Sample Label";
-			_label.SetStyleId ("sample-label");
-
-			_controller.View.AddSubview (_button);
-			_controller.View.AddSubview (_label);
-
-			_controller.View.SetStyleId ("sample-background");
+			_controller.View.AddSubview (_navigator.View);
 
 			// If you have defined a root view controller, set it here:
 			_window.RootViewController = _controller;

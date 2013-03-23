@@ -46,10 +46,10 @@ var styleContext = new StyleContext (new IOSDeviceContext ());
 styleContext.LoadStyleSheet ("style.css");
 
 var button = UIButton.FromType (UIButtonType.Custom);
-button.SetStyleId("sample-button");
+button.SetStyleId ("sample-button");
 
 var background = new UIView();
-background ("sample-background");
+background.SetStyleId ("sample-background");
 
 background.AddSubview(button);
 

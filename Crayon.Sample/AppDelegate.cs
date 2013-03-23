@@ -20,6 +20,7 @@ namespace Crayon.Sample
 		// class-level declarations
 		UIWindow _window;
 		UIButton _button;
+		UILabel _label;
 		UIViewController _controller;
 		StyleContext _styleContext;
 
@@ -40,10 +41,15 @@ namespace Crayon.Sample
 			_styleContext.LoadStyleSheet ("style.css");
 
 			_button = UIButton.FromType (UIButtonType.Custom);
-			_button.SetTitle ("Hello", UIControlState.Normal);
+			_button.SetTitle ("Sample Button", UIControlState.Normal);
 			_button.SetStyleId ("sample-button");
 
+			_label = new UILabel ();
+			_label.Text = "Sample Label";
+			_label.SetStyleId ("sample-label");
+
 			_controller.View.AddSubview (_button);
+			_controller.View.AddSubview (_label);
 
 			_controller.View.SetStyleId ("sample-background");
 

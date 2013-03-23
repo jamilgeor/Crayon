@@ -108,5 +108,26 @@ namespace Crayon
 			Value = float.Parse (value);
 		}
 	}
+
+	[StyleTerm("text-align")]
+	public class StyleTextAlignProperty : StyleProperty
+	{
+		public Alignment Alignment { get { return (Alignment)Value; } }
+
+		public override void SetValue (string value)
+		{
+			var alignment = Alignment.Left;
+			Enum.TryParse<Alignment>(value, true, out alignment);
+
+			Value = alignment;
+		}
+	}
+
+	public enum Alignment
+	{
+		Center,
+		Left,
+		Right
+	}
 }
 

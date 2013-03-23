@@ -60,3 +60,9 @@ Output
 
 ### Documentation
 [IOS Documentation](https://github.com/jamilgeor/Crayon/wiki/ios-control-styling)
+
+### Credits
+* Makes extensive use of [ExCSS](https://github.com/TylerBrinks/ExCSS)
+
+### Contact
+Twitter - [@jamilgeor](https://twitter.com/jamilgeor)

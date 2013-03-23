@@ -8,6 +8,8 @@ An open source CSS implementation for Xamarin mobile development tools
 * Monotouch
 * Mono for Android (Coming soon)
 
+### Disclaimer
+This is still in very early development stage, but would love feedback, contributions etc.
 
 ### Sample
 
@@ -49,7 +51,7 @@ var button = UIButton.FromType (UIButtonType.Custom);
 button.SetStyleId ("sample-button");
 
 var background = new UIView();
-background.SetStyleId ("sample-background");
+background.SetStyleClass ("sample-background");
 
 background.AddSubview(button);
 
@@ -62,7 +64,7 @@ Output
 [IOS Documentation](https://github.com/jamilgeor/Crayon/wiki/ios-control-styling)
 
 ### Credits
-* Makes extensive use of [ExCSS](https://github.com/TylerBrinks/ExCSS)
+* This project makes extensive use of [ExCSS](https://github.com/TylerBrinks/ExCSS)
 
 ### Contact
 Twitter - [@jamilgeor](https://twitter.com/jamilgeor)

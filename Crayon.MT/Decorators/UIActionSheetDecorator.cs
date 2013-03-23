@@ -18,22 +18,30 @@ namespace Crayon.MT
 			_actionSheet = (UIActionSheet)control;
 		}
 		
-		void SetBackground(CGColor color, float alpha)
+		void SetBackgroundColor(CGColor color)
 		{
 			var rect = color != null ? new RectangleF(0, 0, 1, 1) : _actionSheet.Layer.Bounds;
 			UIGraphics.BeginImageContext (rect.Size);
 			using (var context = UIGraphics.GetCurrentContext()) {
-				context.SetAlpha(alpha);
-
-				if (color != null) {
-					context.SetFillColorWithColor (color);
-					context.FillRect (rect);
-				} else {
-					context.DrawImage(_actionSheet.Layer.Bounds, _actionSheet.Layer.Contents);
-				}
+				context.SetFillColorWithColor (color);
+				context.FillRect (rect);
 
 				_actionSheet.Layer.Contents = UIGraphics.GetImageFromCurrentImageContext ().CGImage;
 
+				UIGraphics.EndImageContext ();
+			}
+		}
+
+		void SetBackgroundImage(CGImage image, float alpha)
+		{
+			UIGraphics.BeginImageContext (new SizeF(image.Width, image.Height));
+			using (var context = UIGraphics.GetCurrentContext()) {
+				context.SetAlpha(alpha);
+				
+				context.DrawImage(_actionSheet.Layer.Bounds, image);
+
+				_actionSheet.Layer.Contents = UIGraphics.GetImageFromCurrentImageContext ().CGImage;
+				
 				UIGraphics.EndImageContext ();
 			}
 		}
@@ -43,13 +51,21 @@ namespace Crayon.MT
 		{
 			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 
-			SetBackground (color.CGColor, 1f);
+			SetBackgroundColor (color.CGColor);
+		}
+
+		[StyleProperty(typeof(StyleBackgroundImageProperty))]
+		public void SetBackgroundImage(StyleBackgroundImageProperty property)
+		{
+			var image = UIImage.FromFile (property.ImageUrl);
+
+			SetBackgroundImage (image.CGImage, 1f);
 		}
 
 		[StyleProperty(typeof(StyleBackgroundOpacityProperty))]
 		public void SetBackgroundOpacity(StyleBackgroundOpacityProperty property)
 		{
-			SetBackground (null, property.Opacity);
+			SetBackgroundImage (_actionSheet.Layer.Contents, property.Opacity);
 		}
 	}
 }

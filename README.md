@@ -59,4 +59,4 @@ Output
 ![image](https://raw.github.com/jamilgeor/Crayon/master/Images/readme_sample_1.png)
 
 ### Documentation
-[IOS Documentation](https://github.com/jamilgeor/Crayon/wiki/ios-control-progress)
+[IOS Documentation](https://github.com/jamilgeor/Crayon/wiki/ios-control-styling)

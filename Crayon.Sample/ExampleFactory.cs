@@ -9,11 +9,11 @@ namespace Crayon.Sample
 		{
 			switch (type) {
 			case "UIButton":
-				return new ButtonExample();
+				return new UIButtonExample();
 			case "UILabel":
-				return new LabelExample();
+				return new UILabelExample();
 			case "UIImageView":
-				return new ImageExample();
+				return new UIImageViewExample();
 			}
 
 			return null;

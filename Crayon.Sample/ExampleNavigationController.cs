@@ -5,15 +5,15 @@ using Crayon.MT;
 
 namespace Crayon.Sample
 {
-	public class NavigatorExample : UINavigationController
+	public class ExampleNavigationController : UINavigationController
 	{
-		TableExample _table;
+		UITableViewExample _table;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			_table = new TableExample ();
+			_table = new UITableViewExample ();
 			_table.View.SetStyleId ("sample-table");
 
 			PushViewController (_table, false);

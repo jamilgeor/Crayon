@@ -5,16 +5,17 @@ using Crayon.MT;
 
 namespace Crayon.Sample
 {
-	public class ImageExample : UIViewController
+	public class UILabelExample : UIViewController
 	{
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			var image = new UIImageView (UIImage.FromFile ("background.jpg"));
-			image.SetStyleId ("sample-image");
+			var label = new UILabel ();
+			label.Text = "Hello, world!";
+			label.SetStyleId ("sample-label");
 
-			View.AddSubview (image);
+			View.AddSubview (label);
 			View.SetStyleClass ("sample-background");
 		}
 	}

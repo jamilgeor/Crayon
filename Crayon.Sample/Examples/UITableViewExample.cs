@@ -5,7 +5,7 @@ using MonoTouch.UIKit;
 
 namespace Crayon.Sample
 {
-	public class TableExample : UITableViewController
+	public class UITableViewExample : UITableViewController
 	{
 		public event EventHandler<RowSelectedEventArgs> OnRowSelected;
 

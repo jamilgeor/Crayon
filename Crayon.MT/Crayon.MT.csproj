@@ -45,6 +45,7 @@
     <Compile Include="IOSDeviceContext.cs" />
     <Compile Include="Decorators\UILabelDecorator.cs" />
     <Compile Include="Helpers.cs" />
+    <Compile Include="Decorators\UITableViewCellDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

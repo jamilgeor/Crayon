@@ -4,7 +4,7 @@ using Crayon.MT;
 
 namespace Crayon.Sample
 {
-	public class ButtonExample : UIViewController
+	public class UIButtonExample : UIViewController
 	{
 		UIButton _button;
 

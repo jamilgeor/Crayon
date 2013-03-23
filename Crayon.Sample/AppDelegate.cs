@@ -23,7 +23,7 @@ namespace Crayon.Sample
 		UILabel _label;
 		UIImageView _image;
 		UIViewController _controller;
-		NavigatorExample _navigator;
+		ExampleNavigationController _navigator;
 
 		StyleContext _styleContext;
 
@@ -43,7 +43,7 @@ namespace Crayon.Sample
 			_styleContext = new StyleContext (new IOSDeviceContext ());
 			_styleContext.LoadStyleSheet ("style.css");
 
-			_navigator = new NavigatorExample ();
+			_navigator = new ExampleNavigationController ();
 			_navigator.View.SetStyleId ("sample-navigator");
 
 			_controller.View.AddSubview (_navigator.View);

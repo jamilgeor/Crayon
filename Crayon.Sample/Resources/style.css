@@ -38,6 +38,12 @@
 	background-image: url('background.jpg');
 }
 
+.sample-table-cell {
+    border-width: 2px;
+    border-color: #888888;
+    color: #444444;
+}
+
 #sample-table {
 	background-color: #DDDDDD;
 }

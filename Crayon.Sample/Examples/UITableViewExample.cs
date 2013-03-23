@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-
 using MonoTouch.UIKit;
+
+using Crayon.MT;
 
 namespace Crayon.Sample
 {
@@ -74,8 +75,6 @@ namespace Crayon.Sample
 				"UISwitch",
 				"UITabBar",
 				"UITabBarItem",
-				"UITableView",
-				"UITableViewCell",
 				"UITableViewHeaderFooterView",
 				"UITextField",
 				"UITextView",
@@ -103,6 +102,7 @@ namespace Crayon.Sample
 
 			cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			cell.TextLabel.Text = Rows [indexPath.Row];
+			cell.SetStyleClass ("sample-table-cell");
 
 			return cell;
 		}

@@ -54,6 +54,8 @@ background ("sample-background");
 background.AddSubview(button);
 
 ```
+Output
+
 ![image](https://raw.github.com/jamilgeor/Crayon/master/Images/readme_sample_1.png)
 
 ### Documentation

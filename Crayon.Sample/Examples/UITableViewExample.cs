@@ -79,7 +79,6 @@ namespace Crayon.Sample
 				"UITextField",
 				"UITextView",
 				"UIToolbar",
-				"UIView",
 				"UIWebView",
 				"MKAnnotationView",
 				"MKMapView",

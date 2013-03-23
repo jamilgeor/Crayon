@@ -45,6 +45,9 @@ namespace Crayon
 		}
 	}
 
+	[StyleTerm("background-opacity")]
+	public class StyleBackgroundOpacityProperty : StyleOpacityProperty { }
+
 	[StyleTerm("top")]
 	public class StyleTopProperty : StyleProperty
 	{

@@ -8,12 +8,14 @@ namespace Crayon.Sample
 		public static UIViewController Create(string type)
 		{
 			switch (type) {
+			case "UIActionSheet":
+				return new UIActionSheetExample();
 			case "UIButton":
 				return new UIButtonExample();
-			case "UILabel":
-				return new UILabelExample();
 			case "UIImageView":
 				return new UIImageViewExample();
+			case "UILabel":
+				return new UILabelExample();
 			}
 
 			return null;

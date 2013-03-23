@@ -19,10 +19,6 @@ namespace Crayon.Sample
 	{
 		// class-level declarations
 		UIWindow _window;
-		UIButton _button;
-		UILabel _label;
-		UIImageView _image;
-		UIViewController _controller;
 		ExampleNavigationController _navigator;
 
 		StyleContext _styleContext;
@@ -38,7 +34,6 @@ namespace Crayon.Sample
 		{
 			// create a new window instance based on the screen size
 			_window = new UIWindow (UIScreen.MainScreen.Bounds);
-			_controller = new UIViewController ();
 
 			_styleContext = new StyleContext (new IOSDeviceContext ());
 			_styleContext.LoadStyleSheet ("style.css");
@@ -46,10 +41,8 @@ namespace Crayon.Sample
 			_navigator = new ExampleNavigationController ();
 			_navigator.View.SetStyleId ("sample-navigator");
 
-			_controller.View.AddSubview (_navigator.View);
-
 			// If you have defined a root view controller, set it here:
-			_window.RootViewController = _controller;
+			_window.RootViewController = _navigator;
 			
 			// make the window visible
 			_window.MakeKeyAndVisible ();

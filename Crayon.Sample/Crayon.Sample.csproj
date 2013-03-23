@@ -104,6 +104,7 @@
     <Compile Include="Examples\UILabelExample.cs" />
     <Compile Include="ExampleNavigationController.cs" />
     <Compile Include="Examples\UITableViewExample.cs" />
+    <Compile Include="Examples\UIActionSheetExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

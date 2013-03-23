@@ -55,3 +55,11 @@
 	width: 320px;
 	height: 460px;
 }
+
+#sample-action-sheet {
+	background-color: #FF0000;
+	background-opacity: 0.5;
+	border-width: 3px;
+	border-color: #FFFFFF;
+	border-radius: 4px;
+}

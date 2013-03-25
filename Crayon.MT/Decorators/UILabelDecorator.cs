@@ -23,10 +23,16 @@ namespace Crayon.MT
 			_labelView.TextColor = color;
 		}
 
-		[StylePropertyAttribute(typeof(StyleTextAlignProperty))]
+		[StyleProperty(typeof(StyleTextAlignProperty))]
 		public void SetTextAlignment(StyleTextAlignProperty property)
 		{
 			_labelView.TextAlignment = Helpers.ConvertAlignment(property.Alignment);
+		}
+
+		[StyleProperty(typeof(StyleFontFamilyProperty))]
+		public void SetFontFace(StyleFontFamilyProperty property)
+		{
+			_labelView.Font = UIFont.FromName (property.FontName, _labelView.Font.PointSize);
 		}
 	}
 }

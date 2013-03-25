@@ -21,6 +21,7 @@
 	border-radius: 0px;
 	border-color: #FFFFFF;
 	opacity: 1;
+	font-family: "GillSans";
 }
 
 #sample-image {
@@ -39,7 +40,7 @@
 }
 
 .sample-table-cell {
-    border-width: 2px;
+    border-width: 1px;
     border-color: #888888;
     color: #444444;
 }

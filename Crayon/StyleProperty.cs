@@ -126,6 +126,17 @@ namespace Crayon
 		}
 	}
 
+	[StyleTerm("font-family")]
+	public class StyleFontFamilyProperty : StyleProperty
+	{
+		public string FontName { get { return (string)Value; } }
+
+		public override void SetValue (string value)
+		{
+			Value = value.Replace ("\"", string.Empty);
+		}
+	}
+
 	public enum Alignment
 	{
 		Center,

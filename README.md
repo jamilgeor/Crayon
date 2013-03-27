@@ -22,7 +22,7 @@ CSS
 }
 
 #sample-button { 
-    	height: 55px;
+	height: 55px;
 	width: 200px;
 	opacity: 0.5;
 	top: 50px;

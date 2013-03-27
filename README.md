@@ -34,7 +34,7 @@ CSS
 	background-color: #FF0000;
 }
 
-#sample-background {
+.sample-background {
 	background-image: url('background.jpg');
 	border-color: #DDDDDD;
 	border-width: 5px;

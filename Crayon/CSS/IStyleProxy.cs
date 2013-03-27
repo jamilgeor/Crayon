@@ -8,6 +8,7 @@ namespace Crayon
 		void LoadFromFile(string path);
 		IEnumerable<StyleProperty> GetStylesById (string styleId);
 		IEnumerable<StyleProperty> GetStylesByClass (string classId);
+		IEnumerable<StyleProperty> GetGlobalStyles();
 	}
 }
 

@@ -1,3 +1,8 @@
+* {
+	font-family: "GillSans";
+	font-size: 18px;
+}
+
 #sample-label, #sample-button {
 	height: 55px;
 	width: 200px;
@@ -21,7 +26,6 @@
 	border-radius: 0px;
 	border-color: #FFFFFF;
 	opacity: 1;
-	font-family: "GillSans";
 }
 
 #sample-image {

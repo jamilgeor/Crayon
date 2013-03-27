@@ -34,6 +34,12 @@ namespace Crayon.MT
 		{
 			_labelView.Font = UIFont.FromName (property.FontName, _labelView.Font.PointSize);
 		}
+
+		[StyleProperty(typeof(StyleFontSizeProperty))]
+		public void SetFontSize(StyleFontSizeProperty property)
+		{
+			_labelView.Font = UIFont.FromName (_labelView.Font.Name, property.Size);
+		}
 	}
 }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MonoTouch.UIKit;
+using MonoTouch.Foundation;
 
 using Crayon.MT;
 
@@ -26,12 +27,11 @@ namespace Crayon.Sample
 			TableView.Delegate = sampleDelegate;
 		}
 	}
-
 	public class TableSampleDelegate : UITableViewDelegate
 	{
 		public event EventHandler<RowSelectedEventArgs> OnRowSelected;
 
-		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			var row = ((TableSampleSource)tableView.Source).Rows[indexPath.Row];
 
@@ -91,7 +91,7 @@ namespace Crayon.Sample
 			return Rows.Count;
 		}
 
-		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
 			var id = string.Format ("cell{0}", indexPath.Row);
 			var cell = tableView.DequeueReusableCell (id);

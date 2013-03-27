@@ -137,6 +137,17 @@ namespace Crayon
 		}
 	}
 
+	[StyleTerm("font-size")]
+	public class StyleFontSizeProperty : StyleProperty
+	{
+		public float Size { get { return (float)Value; } }
+
+		public override void SetValue(string value)
+		{
+			Value = float.Parse (value);
+		}
+	}
+
 	public enum Alignment
 	{
 		Center,

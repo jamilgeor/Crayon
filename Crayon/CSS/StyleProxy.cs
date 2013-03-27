@@ -33,6 +33,11 @@ namespace Crayon
 			return GetStyles (s => s.Class == classId);
 		}
 
+		public IEnumerable<StyleProperty> GetGlobalStyles()
+		{
+			return GetStyles (s => s.ElementName == "*");
+		}
+
 		IEnumerable<StyleProperty> GetStyles(Func<SimpleSelector, bool> filter)
 		{
 			var properties = new List<StyleProperty> ();

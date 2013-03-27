@@ -43,11 +43,13 @@ namespace Crayon
 
 		public void SetStyleById(string styleId, object targetControl)
 		{
+			ProcessStyleProperties (_proxy.GetGlobalStyles (), targetControl);
 			ProcessStyleProperties (_proxy.GetStylesById(styleId), targetControl);
 		}
 
 		public void SetStyleByClass(string styleClass, object targetControl)
 		{
+			ProcessStyleProperties (_proxy.GetGlobalStyles (), targetControl);
 			ProcessStyleProperties (_proxy.GetStylesByClass (styleClass), targetControl);
 		}
 

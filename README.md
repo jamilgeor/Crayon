@@ -16,8 +16,13 @@ This is still in very early development stage. Would love feedback, contribution
 CSS
 
 ```
+* {
+	font-size: 18px;
+	font-family: GillSans;
+}
+
 #sample-button { 
-    height: 55px;
+    	height: 55px;
 	width: 200px;
 	opacity: 0.5;
 	top: 50px;

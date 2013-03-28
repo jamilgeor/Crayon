@@ -15,6 +15,11 @@ namespace Crayon
 			
 			return false;
 		}
+
+		protected static bool CanHandleExactType (Type type, Type typeToMatch)
+		{
+			return type == typeToMatch;
+		}
 	}
 }
 

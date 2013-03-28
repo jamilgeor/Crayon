@@ -47,6 +47,8 @@
     <Compile Include="Helpers.cs" />
     <Compile Include="Decorators\UITableViewCellDecorator.cs" />
     <Compile Include="Decorators\UIActionSheetDecorator.cs" />
+    <Compile Include="Decorators\UIActivityIndicatorViewDecorator.cs" />
+    <Compile Include="Decorators\BaseDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

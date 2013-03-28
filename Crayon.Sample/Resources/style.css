@@ -69,3 +69,12 @@
 	border-radius: 4px;
 	height: 500px;
 }
+
+#sample-activity-indicator {
+	top: 150px;
+	left: 150px;
+	background-color: #DEDEDE;
+	border-radius: 4px;
+	width: 2;
+	height: 2;
+}

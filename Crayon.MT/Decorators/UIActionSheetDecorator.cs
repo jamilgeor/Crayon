@@ -9,24 +9,19 @@ using Crayon;
 namespace Crayon.MT
 {
 	[ControlDecorator(typeof(UIActionSheet))]
-	public class UIActionSheetDecorator : IControlDecorator
+	public class UIActionSheetDecorator : BaseDecorator
 	{
-		UIActionSheet _actionSheet;
-
-		public void SetControl(object control)
-		{
-			_actionSheet = (UIActionSheet)control;
-		}
+		UIActionSheet View { get { return (UIActionSheet)Control; } }
 		
 		void SetBackgroundColor(CGColor color)
 		{
-			var rect = color != null ? new RectangleF(0, 0, 1, 1) : _actionSheet.Layer.Bounds;
+			var rect = color != null ? new RectangleF(0, 0, 1, 1) : View.Layer.Bounds;
 			UIGraphics.BeginImageContext (rect.Size);
 			using (var context = UIGraphics.GetCurrentContext()) {
 				context.SetFillColorWithColor (color);
 				context.FillRect (rect);
 
-				_actionSheet.Layer.Contents = UIGraphics.GetImageFromCurrentImageContext ().CGImage;
+				View.Layer.Contents = UIGraphics.GetImageFromCurrentImageContext ().CGImage;
 
 				UIGraphics.EndImageContext ();
 			}
@@ -38,16 +33,16 @@ namespace Crayon.MT
 			using (var context = UIGraphics.GetCurrentContext()) {
 				context.SetAlpha(alpha);
 				
-				context.DrawImage(_actionSheet.Layer.Bounds, image);
+				context.DrawImage(View.Layer.Bounds, image);
 
-				_actionSheet.Layer.Contents = UIGraphics.GetImageFromCurrentImageContext ().CGImage;
+				View.Layer.Contents = UIGraphics.GetImageFromCurrentImageContext ().CGImage;
 				
 				UIGraphics.EndImageContext ();
 			}
 		}
 
 		[StyleProperty(typeof(StyleBackgroundColorProperty))]
-		public void SetBackgroundColor(StyleBackgroundColorProperty property)
+		public override void SetBackgroundColor(StyleBackgroundColorProperty property)
 		{
 			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 
@@ -55,7 +50,7 @@ namespace Crayon.MT
 		}
 
 		[StyleProperty(typeof(StyleBackgroundImageProperty))]
-		public void SetBackgroundImage(StyleBackgroundImageProperty property)
+		public override void SetBackgroundImage(StyleBackgroundImageProperty property)
 		{
 			var image = UIImage.FromFile (property.ImageUrl);
 
@@ -65,7 +60,7 @@ namespace Crayon.MT
 		[StyleProperty(typeof(StyleBackgroundOpacityProperty))]
 		public void SetBackgroundOpacity(StyleBackgroundOpacityProperty property)
 		{
-			SetBackgroundImage (_actionSheet.Layer.Contents, property.Opacity);
+			SetBackgroundImage (View.Layer.Contents, property.Opacity);
 		}
 	}
 }

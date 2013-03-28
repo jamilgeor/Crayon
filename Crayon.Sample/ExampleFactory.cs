@@ -16,6 +16,8 @@ namespace Crayon.Sample
 				return new UIImageViewExample();
 			case "UILabel":
 				return new UILabelExample();
+			case "UIActivityIndicatorView":
+				return new UIActivityIndicatorViewExample();
 			}
 
 			return null;

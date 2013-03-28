@@ -15,22 +15,22 @@ namespace Crayon
 	[StyleTerm("width")]
 	public class StyleWidthProperty : StyleProperty
 	{
-		public int Width { get { return (int)Value; } }
+		public float Width { get { return (float)Value; } }
 
 		public override void SetValue (string value)
 		{
-			Value = int.Parse (value);
+			Value = float.Parse (value);
 		}
 	}
 
 	[StyleTerm("height")]
 	public class StyleHeightProperty : StyleProperty
 	{
-		public int Height { get { return (int)Value; } }
+		public float Height { get { return (float)Value; } }
 
 		public override void SetValue (string value)
 		{
-			Value = int.Parse (value);
+			Value = float.Parse (value);
 		}
 	}
 

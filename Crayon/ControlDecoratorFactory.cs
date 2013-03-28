@@ -19,7 +19,7 @@ namespace Crayon
 				foreach (var attribute in attributes) {
 					var castAttribute = (ControlDecoratorAttribute)attribute;
 					
-					if (CanHandleType(control.GetType(), castAttribute.ControlType))
+					if (CanHandleExactType(control.GetType(), castAttribute.ControlType))
 						decorators.Add((IControlDecorator)factoryAssembly.CreateInstance(type.FullName));
 				}
 			}

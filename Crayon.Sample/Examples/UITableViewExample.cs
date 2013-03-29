@@ -55,7 +55,6 @@ namespace Crayon.Sample
 			{
 				"UIActionSheet",
 				"UIActivityIndicatorView",
-				"UIBarButtonItem",
 				"UIButton",
 				"UICollectionView",
 				"UICollectionViewCell",

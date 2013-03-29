@@ -5,14 +5,13 @@ using MonoTouch.CoreGraphics;
 
 namespace Crayon.MT
 {
-	public class BaseDecorator : IControlDecorator
+	public abstract class BaseDecorator<T> : IControlDecorator where T : UIView
 	{
-		protected object Control { get; set; }
-		UIView View { get { return (UIView)Control; } } 
+		protected T View { get; private set; } 
 
 		public void SetControl(object control)
 		{
-			Control = control;
+			View = (T)control;
 		}
 
 		[StyleProperty(typeof(StyleWidthProperty))]

@@ -10,14 +10,16 @@ namespace Crayon.Sample
 			switch (type) {
 			case "UIActionSheet":
 				return new UIActionSheetExample();
+			case "UIActivityIndicatorView":
+				return new UIActivityIndicatorViewExample();
 			case "UIButton":
 				return new UIButtonExample();
 			case "UIImageView":
 				return new UIImageViewExample();
 			case "UILabel":
 				return new UILabelExample();
-			case "UIActivityIndicatorView":
-				return new UIActivityIndicatorViewExample();
+			case "UIToolbar":
+				return new UIToolbarExample();
 			}
 
 			return null;

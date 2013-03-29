@@ -6,10 +6,8 @@ using Crayon;
 namespace Crayon.MT
 {
 	[ControlDecorator(typeof(UILabel))]
-	public class UILabelDecorator : BaseDecorator
+	public class UILabelDecorator : BaseDecorator<UILabel>
 	{
-		UILabel View { get { return (UILabel)Control; } }
-
 		[StyleProperty(typeof(StyleColorProperty))]
 		public void SetTextColor(StyleColorProperty property)
 		{

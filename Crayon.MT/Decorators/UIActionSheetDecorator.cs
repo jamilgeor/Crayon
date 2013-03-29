@@ -9,10 +9,8 @@ using Crayon;
 namespace Crayon.MT
 {
 	[ControlDecorator(typeof(UIActionSheet))]
-	public class UIActionSheetDecorator : BaseDecorator
+	public class UIActionSheetDecorator : BaseDecorator<UIActionSheet>
 	{
-		UIActionSheet View { get { return (UIActionSheet)Control; } }
-		
 		void SetBackgroundColor(CGColor color)
 		{
 			var rect = color != null ? new RectangleF(0, 0, 1, 1) : View.Layer.Bounds;

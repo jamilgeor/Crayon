@@ -49,6 +49,11 @@
     <Compile Include="Decorators\UIActionSheetDecorator.cs" />
     <Compile Include="Decorators\UIActivityIndicatorViewDecorator.cs" />
     <Compile Include="Decorators\BaseDecorator.cs" />
+    <Compile Include="Decorators\UIToolbarDecorator.cs" />
+    <Compile Include="Decorators\UITableViewDecorator.cs" />
+    <Compile Include="Decorators\UIImageViewDecorator.cs" />
+    <Compile Include="BarItemExtensions.cs" />
+    <Compile Include="Decorators\UIBarButtonItemDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

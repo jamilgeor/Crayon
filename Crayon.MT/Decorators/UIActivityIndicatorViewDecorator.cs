@@ -5,10 +5,8 @@ using MonoTouch.CoreGraphics;
 namespace Crayon.MT
 {
 	[ControlDecorator(typeof(UIActivityIndicatorView))]
-	public class UIActivityIndicatorViewDecorator : BaseDecorator
+	public class UIActivityIndicatorViewDecorator : BaseDecorator<UIActivityIndicatorView>
 	{
-		UIActivityIndicatorView View { get { return (UIActivityIndicatorView)Control; } }
-
 		[StyleProperty(typeof(StyleWidthProperty))]
 		public override void SetWidth(StyleWidthProperty property)
 		{

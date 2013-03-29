@@ -6,10 +6,8 @@ using Crayon;
 namespace Crayon.MT
 {
 	[ControlDecorator(typeof(UIButton))]
-	public class UIButtonDecorator : BaseDecorator
+	public class UIButtonDecorator : BaseDecorator<UIButton>
 	{
-		UIButton View { get { return (UIButton)Control; } }
-
 		[StyleProperty(typeof(StyleColorProperty))]
 		public void SetColor(StyleColorProperty property)
 		{

@@ -6,10 +6,8 @@ using Crayon;
 namespace Crayon.MT
 {
 	[ControlDecorator(typeof(UITableViewCell))]
-	public class UITableViewCellDecorator : BaseDecorator
+	public class UITableViewCellDecorator : BaseDecorator<UITableViewCell>
 	{
-		UITableViewCell View { get { return (UITableViewCell)Control; } }
-
 		[StyleProperty(typeof(StyleColorProperty))]
 		public void SetTextColor(StyleColorProperty property)
 		{

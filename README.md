@@ -6,7 +6,6 @@ An open source CSS implementation for Xamarin mobile development tools
 
 ### Target Platforms
 * Monotouch
-* Mono for Android (Coming soon)
 
 ### Disclaimer
 This is still in very early development stage. Would love feedback, contributions etc.

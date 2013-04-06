@@ -37,13 +37,6 @@ namespace Crayon.Sample
 			CollectionView.RegisterClassForCell (typeof(ExampleCollectionItemCell), CellId);
 		}
 
-		public override UICollectionReusableView GetViewForSupplementaryElement (UICollectionView collectionView, NSString elementKind, NSIndexPath indexPath)
-		{
-			var headerView = (ExampleHeaderView)collectionView.DequeueReusableSupplementaryView (elementKind, HeaderId, indexPath);
-			headerView.Title = "Header";
-			return headerView;
-		}
-
 		public override int NumberOfSections (UICollectionView collectionView)
 		{
 			return 1;
@@ -101,25 +94,6 @@ namespace Crayon.Sample
 
 				ContentView.AddSubview(_imageView);
 				ContentView.AddSubview(_label);
-			}
-		}
-
-
-		class ExampleHeaderView : UICollectionReusableView
-		{
-			UILabel _label;
-			
-			public string Title
-			{
-				get { return _label.Text; }
-				set { _label.Text = value; }
-			}
-
-			[Export ("initWithFrame:")]
-			public ExampleHeaderView(RectangleF frame) : base(frame)
-			{
-				_label = new UILabel(new RectangleF(0, 0, 320, 50));
-				AddSubview(_label);
 			}
 		}
 

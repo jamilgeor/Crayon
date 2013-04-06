@@ -57,7 +57,6 @@ namespace Crayon.Sample
 				"UIActivityIndicatorView",
 				"UIButton",
 				"UICollectionView",
-				"UICollectionViewCell",
 				"UIDatePicker",
 				"UIImageView",
 				"UILabel",

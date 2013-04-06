@@ -14,6 +14,8 @@ namespace Crayon.Sample
 				return new UIActivityIndicatorViewExample();
 			case "UIButton":
 				return new UIButtonExample();
+			case "UICollectionView":
+				return new UICollectionViewExample(new UICollectionViewFlowLayout());
 			case "UIImageView":
 				return new UIImageViewExample();
 			case "UILabel":

@@ -109,6 +109,7 @@
     <Compile Include="Examples\UIActionSheetExample.cs" />
     <Compile Include="Examples\UIActivityIndicatorViewExample.cs" />
     <Compile Include="Examples\UIToolbarExample.cs" />
+    <Compile Include="Examples\UICollectionViewExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -124,5 +125,6 @@
   <ItemGroup>
     <BundleResource Include="Resources\style.css" />
     <BundleResource Include="Resources\background.jpg" />
+    <BundleResource Include="Resources\person.jpg" />
   </ItemGroup>
 </Project>

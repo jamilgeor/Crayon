@@ -54,6 +54,7 @@
     <Compile Include="Decorators\UIImageViewDecorator.cs" />
     <Compile Include="BarItemExtensions.cs" />
     <Compile Include="Decorators\UIBarButtonItemDecorator.cs" />
+    <Compile Include="Decorators\UICollectionViewDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

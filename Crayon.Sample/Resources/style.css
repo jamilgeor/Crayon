@@ -89,6 +89,16 @@
 	top: 20px;
 }
 
+#sample-collection {
+	border-color: #FFFFFF;
+	border-width: 3px;
+}
+
+.sample-collection-cell {
+	border-color: #FF0000;
+	border-width: 3px;
+}
+
 .sample-cell-image {
 	width: 80px;
 	height: 80px;

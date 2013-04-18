@@ -33,6 +33,7 @@ namespace Crayon.Sample
 			base.ViewDidLoad ();
 
 			CollectionView.SetStyleClass ("sample-background");
+			CollectionView.SetStyleId ("sample-collection");
 
 			CollectionView.RegisterClassForCell (typeof(ExampleCollectionItemCell), CellId);
 		}

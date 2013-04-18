@@ -76,6 +76,7 @@
     <Compile Include="Decorators\MKAnnotationViewDecorator.cs" />
     <Compile Include="Decorators\MKMapViewDecorator.cs" />
     <Compile Include="Decorators\MPVolumeViewDecorator.cs" />
+    <Compile Include="Decorators\UICollectionViewCellDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

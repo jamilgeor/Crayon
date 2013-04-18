@@ -24,6 +24,8 @@ namespace Crayon.Sample
 				return new UILabelExample();
 			case "UIPageControl":
 				return new UIPageControlExample();
+			case "UIPickerView":
+				return new UIPickerViewExample();
 			case "UIToolbar":
 				return new UIToolbarExample();
 			}

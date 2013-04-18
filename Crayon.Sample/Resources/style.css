@@ -120,8 +120,8 @@
 	background-color: #FF0000;
 }
 
-#sample-date {
-	top: 20px;
+#sample-date, #sample-picker {
+	top: 100px;
 	border-color: #FFFFFF;
 	border-width: 3px;
 }

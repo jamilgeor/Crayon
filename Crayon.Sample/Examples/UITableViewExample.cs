@@ -60,7 +60,6 @@ namespace Crayon.Sample
 				"UIDatePicker",
 				"UIImageView",
 				"UILabel",
-				"UINavigationBar",
 				"UIPageControl",
 				"UIPickerView",
 				"UIProgressView",

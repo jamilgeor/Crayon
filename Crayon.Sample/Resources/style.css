@@ -125,3 +125,13 @@
 	border-color: #FFFFFF;
 	border-width: 3px;
 }
+
+#sample-page-control-background {
+	background-color: #2E2E2E;
+}
+
+#sample-page-control {
+	top: 20px;
+	left: 160px;
+	opacity: 0.5;
+}

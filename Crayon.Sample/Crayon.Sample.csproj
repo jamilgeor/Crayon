@@ -110,6 +110,7 @@
     <Compile Include="Examples\UIActivityIndicatorViewExample.cs" />
     <Compile Include="Examples\UIToolbarExample.cs" />
     <Compile Include="Examples\UICollectionViewExample.cs" />
+    <Compile Include="Examples\UIDatePickerExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -16,6 +16,8 @@ namespace Crayon.Sample
 				return new UIButtonExample();
 			case "UICollectionView":
 				return new UICollectionViewExample(new UICollectionViewFlowLayout());
+			case "UIDatePicker":
+				return new UIDatePickerExample();
 			case "UIImageView":
 				return new UIImageViewExample();
 			case "UILabel":

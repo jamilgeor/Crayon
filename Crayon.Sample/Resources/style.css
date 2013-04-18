@@ -114,3 +114,9 @@
 #sample-baritem {
 	background-color: #FF0000;
 }
+
+#sample-date {
+	top: 20px;
+	border-color: #FFFFFF;
+	border-width: 3px;
+}

@@ -55,6 +55,27 @@
     <Compile Include="BarItemExtensions.cs" />
     <Compile Include="Decorators\UIBarButtonItemDecorator.cs" />
     <Compile Include="Decorators\UICollectionViewDecorator.cs" />
+    <Compile Include="Decorators\UIDatePickerDecorator.cs" />
+    <Compile Include="Decorators\UINavigationBarDecorator.cs" />
+    <Compile Include="Decorators\UIPageControlDecorator.cs" />
+    <Compile Include="Decorators\UIPickerViewDecorator.cs" />
+    <Compile Include="Decorators\UIProgressViewDecorator.cs" />
+    <Compile Include="Decorators\UIRefreshControlDecorator.cs" />
+    <Compile Include="Decorators\UIScrollViewDecorator.cs" />
+    <Compile Include="Decorators\UISearchBarDecorator.cs" />
+    <Compile Include="Decorators\UISegmentedControlDecorator.cs" />
+    <Compile Include="Decorators\UISliderDecorator.cs" />
+    <Compile Include="Decorators\UIStepperDecorator.cs" />
+    <Compile Include="Decorators\UISwitchDecorator.cs" />
+    <Compile Include="Decorators\UITabBarDecorator.cs" />
+    <Compile Include="Decorators\UITabBarItemDecorator.cs" />
+    <Compile Include="Decorators\UITableViewHeaderFooterViewDecorator.cs" />
+    <Compile Include="Decorators\UITextFieldDecorator.cs" />
+    <Compile Include="Decorators\UITextViewDecorator.cs" />
+    <Compile Include="Decorators\UIWebViewDecorator.cs" />
+    <Compile Include="Decorators\MKAnnotationViewDecorator.cs" />
+    <Compile Include="Decorators\MKMapViewDecorator.cs" />
+    <Compile Include="Decorators\MPVolumeViewDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crayon\Crayon.csproj">

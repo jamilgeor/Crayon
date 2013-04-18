@@ -13,6 +13,8 @@ namespace Crayon.Sample
 		{
 			base.ViewDidLoad ();
 
+			NavigationBar.SetStyleId("sample-navigation");
+
 			_table = new UITableViewExample ();
 			_table.View.SetStyleId ("sample-table");
 

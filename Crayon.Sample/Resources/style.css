@@ -142,3 +142,11 @@
 	width: 200px;
 	height: 50px;
 }
+
+#sample-refresh {
+	background-color: #FF0000;
+	opacity: 0.5;
+	border-width: 1px;
+	border-color: #000000;
+	border-radius: 4px;
+}

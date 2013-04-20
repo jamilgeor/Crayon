@@ -9,6 +9,7 @@ namespace Crayon.Sample
 {
 	public class UITableViewExample : UITableViewController
 	{
+		UIRefreshControl _refreshControl;
 		public event EventHandler<RowSelectedEventArgs> OnRowSelected;
 
 		public override void ViewDidLoad ()
@@ -25,6 +26,16 @@ namespace Crayon.Sample
 			};
 
 			TableView.Delegate = sampleDelegate;
+
+			_refreshControl = new UIRefreshControl();
+			
+			_refreshControl.SetStyleId("sample-refresh");
+
+			_refreshControl.ValueChanged += (o, e) => {
+				_refreshControl.EndRefreshing();
+			};
+
+			TableView.AddSubview(_refreshControl);
 		}
 	}
 	public class TableSampleDelegate : UITableViewDelegate
@@ -63,7 +74,6 @@ namespace Crayon.Sample
 				"UIPageControl",
 				"UIPickerView",
 				"UIProgressView",
-				"UIRefreshControl",
 				"UIScrollView",
 				"UISearchBar",
 				"UISegmentedControl",

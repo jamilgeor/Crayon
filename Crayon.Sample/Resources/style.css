@@ -135,3 +135,10 @@
 	left: 160px;
 	opacity: 0.5;
 }
+
+#sample-progress {
+	top: 20px;
+	left: 60px;
+	width: 200px;
+	height: 50px;
+}

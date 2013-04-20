@@ -113,6 +113,7 @@
     <Compile Include="Examples\UIDatePickerExample.cs" />
     <Compile Include="Examples\UIPageControlExample.cs" />
     <Compile Include="Examples\UIPickerViewExample.cs" />
+    <Compile Include="Examples\UIProgressViewExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

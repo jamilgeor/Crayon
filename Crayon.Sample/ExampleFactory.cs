@@ -26,6 +26,8 @@ namespace Crayon.Sample
 				return new UIPageControlExample();
 			case "UIPickerView":
 				return new UIPickerViewExample();
+			case "UIProgressView":
+				return new UIProgressViewExample();
 			case "UIToolbar":
 				return new UIToolbarExample();
 			}

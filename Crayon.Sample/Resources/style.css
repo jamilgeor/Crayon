@@ -150,3 +150,11 @@
 	border-color: #000000;
 	border-radius: 4px;
 }
+
+#sample-scroll-view {
+	width: 320;
+	height: 400;
+	border-width: 2px;
+	border-color: #FFFFFF;
+	border-radius: 4px;
+}

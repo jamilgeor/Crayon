@@ -28,6 +28,8 @@ namespace Crayon.Sample
 				return new UIPickerViewExample();
 			case "UIProgressView":
 				return new UIProgressViewExample();
+			case "UIScrollView":
+				return new UIScrollViewExample();
 			case "UIToolbar":
 				return new UIToolbarExample();
 			}

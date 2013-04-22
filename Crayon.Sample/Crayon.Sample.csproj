@@ -115,6 +115,7 @@
     <Compile Include="Examples\UIPickerViewExample.cs" />
     <Compile Include="Examples\UIProgressViewExample.cs" />
     <Compile Include="Examples\UIScrollViewExample.cs" />
+    <Compile Include="Examples\UISearchBarExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

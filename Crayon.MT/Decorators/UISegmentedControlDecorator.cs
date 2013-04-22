@@ -25,6 +25,16 @@ namespace Crayon.MT
 
 			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
 		}
+
+		[StyleProperty(typeof(StyleColorProperty))]
+		public void SetFontColor(StyleColorProperty property)
+		{
+			var textAttributes = View.GetTitleTextAttributes(UIControlState.Normal);
+
+			textAttributes.TextColor = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
+
+			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+		}
 	}
 }
 

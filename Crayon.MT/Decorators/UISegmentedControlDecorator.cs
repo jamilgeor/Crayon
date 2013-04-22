@@ -11,7 +11,7 @@ namespace Crayon.MT
 		{
 			var textAttributes = View.GetTitleTextAttributes(UIControlState.Normal);
 
-			textAttributes.Font = UIFont.FromName(property.FontName, 10f);//property.FontName, textAttributes.Font == null ? UIFont.SystemFontSize : textAttributes.Font.PointSize);
+			textAttributes.Font = UIFont.FromName(property.FontName, textAttributes.Font == null ? UIFont.SystemFontSize : textAttributes.Font.PointSize);
 		
 			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
 		}

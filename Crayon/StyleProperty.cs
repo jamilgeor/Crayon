@@ -129,7 +129,7 @@ namespace Crayon
 	[StyleTerm("font-family")]
 	public class StyleFontFamilyProperty : StyleProperty
 	{
-		public string FontName { get { return (string)Value; } }
+		public string FontName { get { return Value.ToString(); } }
 
 		public override void SetValue (string value)
 		{

@@ -164,3 +164,11 @@
 	height: 50px;
 	background-color: #DDDDDD;
 }
+
+#sample-segmented {
+	width: 200px;
+	height: 40px;
+	left: 60px;
+	top: 50px;
+	font-family: "AmericanTypewriter";
+}

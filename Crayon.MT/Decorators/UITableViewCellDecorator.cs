@@ -19,9 +19,7 @@ namespace Crayon.MT
 		[StyleProperty(typeof(StyleFontFamilyProperty))]
 		public void SetFontFmaily(StyleFontFamilyProperty property)
 		{
-			//By default text label font size is set to 0 which causes rendering issues
-			const float defaultFontSize = 18.0f;
-			var fontSize = View.TextLabel.Font.PointSize == 0 ? defaultFontSize : View.TextLabel.Font.PointSize;
+			var fontSize = View.TextLabel.Font.PointSize == 0 ? UIFont.SystemFontSize : View.TextLabel.Font.PointSize;
 
 			View.TextLabel.Font = UIFont.FromName (property.FontName, fontSize);
 		}

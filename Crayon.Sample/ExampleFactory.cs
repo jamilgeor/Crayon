@@ -36,6 +36,8 @@ namespace Crayon.Sample
 				return new UISegmentedControlExample();
 			case "UISlider":
 				return new UISliderExample();
+			case "UIStepper":
+				return new UIStepperExample();
 			case "UIToolbar":
 				return new UIToolbarExample();
 			}

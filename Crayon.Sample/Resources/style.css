@@ -183,3 +183,10 @@
 	left: 100px;
 	top: 50px;
 }
+
+#sample-switch {
+	left: 100px;
+	top: 50px;
+	font-family: "AmericanTypewriter";
+	font-size: 10px;
+}

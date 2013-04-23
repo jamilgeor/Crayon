@@ -38,6 +38,8 @@ namespace Crayon.Sample
 				return new UISliderExample();
 			case "UIStepper":
 				return new UIStepperExample();
+			case "UISwitch":
+				return new UISwitchExample();
 			case "UIToolbar":
 				return new UIToolbarExample();
 			}

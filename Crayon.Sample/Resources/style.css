@@ -198,3 +198,13 @@
 .sample-tabbar-item {
 	color: #000000;
 }
+
+#sample-web {
+	top: 50px;
+	left: 60px;
+	width: 200px;
+	height: 300px;
+	border-width: 3px;
+	border-color: #000000;
+	border-radius: 4px;
+}

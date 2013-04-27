@@ -44,6 +44,8 @@ namespace Crayon.Sample
 				return new UITabBarExample();
 			case "UIToolbar":
 				return new UIToolbarExample();
+			case "UIWebView":
+				return new UIWebViewExample();
 			}
 
 			return null;

@@ -123,6 +123,7 @@
     <Compile Include="Examples\UITabBarExample.cs" />
     <Compile Include="Examples\UIWebViewExample.cs" />
     <Compile Include="Examples\UITextFieldExample.cs" />
+    <Compile Include="Examples\UITextViewExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

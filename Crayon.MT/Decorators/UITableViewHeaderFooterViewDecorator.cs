@@ -33,6 +33,13 @@ namespace Crayon.MT
 			View.DetailTextLabel.Font = UIFont.FromName(property.FontName, View.DetailTextLabel.Font.PointSize == 0 ? UIFont.SystemFontSize : View.DetailTextLabel.Font.PointSize);
 		}
 
+		[StyleProperty(typeof(StyleColorProperty))]
+		public void SetFontColor(StyleColorProperty property)
+		{
+			View.TextLabel.TextColor = UIColor.FromRGBA(property.Color.R, property.Color.G, property.Color.B, property.Color.A);
+			View.DetailTextLabel.TextColor = UIColor.FromRGBA(property.Color.R, property.Color.G, property.Color.B, property.Color.A);
+		}
+
 		[StyleProperty(typeof(StyleFontSizeProperty))]
 		public void SetFontSize(StyleFontSizeProperty property)
 		{

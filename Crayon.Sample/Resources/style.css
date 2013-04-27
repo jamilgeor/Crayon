@@ -208,3 +208,11 @@
 	border-color: #000000;
 	border-radius: 4px;
 }
+
+#sample-table-header {
+	width: 320px;
+	height: 25px;
+	background-color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+}

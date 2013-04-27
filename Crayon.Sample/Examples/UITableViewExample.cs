@@ -4,6 +4,7 @@ using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 
 using Crayon.MT;
+using System.Drawing;
 
 namespace Crayon.Sample
 {
@@ -27,10 +28,27 @@ namespace Crayon.Sample
 
 			TableView.Delegate = sampleDelegate;
 
+			AddHeader();
+			AddRefreshControl();
+		
+		}
+
+		void AddHeader()
+		{
+			var header = new UITableViewHeaderFooterView();
+			
+			header.TextLabel.Text = "Crayon Examples";
+			header.SetStyleId("sample-table-header");
+			
+			TableView.TableHeaderView = header;
+		}
+
+		void AddRefreshControl()
+		{
 			_refreshControl = new UIRefreshControl();
 			
 			_refreshControl.SetStyleId("sample-refresh");
-
+			
 			_refreshControl.ValueChanged += (o, e) => {
 				_refreshControl.EndRefreshing();
 			};
@@ -38,9 +56,21 @@ namespace Crayon.Sample
 			TableView.AddSubview(_refreshControl);
 		}
 	}
+
 	public class TableSampleDelegate : UITableViewDelegate
 	{
 		public event EventHandler<RowSelectedEventArgs> OnRowSelected;
+
+		/*public override UIView GetViewForHeader (UITableView tableView, int section)
+		{
+			var header = new UITableViewHeaderFooterView();
+
+			header.TextLabel.Text = "Crayon Examples";
+			header.DetailTextLabel.Text = "Detailed text";
+			header.SetStyleId("sample-table-header");
+
+			return header;
+		}*/
 
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{

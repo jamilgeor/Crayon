@@ -50,6 +50,8 @@ namespace Crayon.Sample
 				return new UIToolbarExample();
 			case "UIWebView":
 				return new UIWebViewExample();
+			case "MKMapView":
+				return new MKMapViewExample();
 			}
 
 			return null;

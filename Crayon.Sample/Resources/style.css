@@ -235,3 +235,13 @@
 	left: 60px;
 	top: 50px;
 }
+
+#sample-map {
+	width: 260px;
+	height: 380px;
+	top: 20px;
+	left: 30px;
+	border-width: 3px;
+	border-color: #FFFFFF;
+	border-radius: 3px;
+}

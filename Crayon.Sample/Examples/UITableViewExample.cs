@@ -115,7 +115,6 @@ namespace Crayon.Sample
 				"UITextView",
 				"UIToolbar",
 				"UIWebView",
-				"MKAnnotationView",
 				"MKMapView",
 				"MPVolumeView"
 			};

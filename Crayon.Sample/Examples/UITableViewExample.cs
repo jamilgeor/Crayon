@@ -81,7 +81,6 @@ namespace Crayon.Sample
 				"UIStepper",
 				"UISwitch",
 				"UITabBar",
-				"UITabBarItem",
 				"UITableViewHeaderFooterView",
 				"UITextField",
 				"UITextView",

@@ -190,3 +190,11 @@
 	font-family: "AmericanTypewriter";
 	font-size: 10px;
 }
+
+#sample-tabbar {
+	background-color: #DDDDDD;
+}
+
+.sample-tabbar-item {
+	color: #000000;
+}

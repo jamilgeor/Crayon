@@ -254,3 +254,10 @@
 	width: 20px;
 	height: 20px;
 }
+
+#sample-volume {
+	top: 50px;
+	left: 60px;
+	width: 200px;
+	height: 50px;
+}

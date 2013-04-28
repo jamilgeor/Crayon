@@ -125,6 +125,7 @@
     <Compile Include="Examples\UITextFieldExample.cs" />
     <Compile Include="Examples\UITextViewExample.cs" />
     <Compile Include="Examples\MKMapViewExample.cs" />
+    <Compile Include="Examples\MPVolumeViewExample.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

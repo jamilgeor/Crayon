@@ -141,5 +141,6 @@
     <BundleResource Include="Resources\style.css" />
     <BundleResource Include="Resources\background.jpg" />
     <BundleResource Include="Resources\person.jpg" />
+    <BundleResource Include="Resources\annotation.png" />
   </ItemGroup>
 </Project>

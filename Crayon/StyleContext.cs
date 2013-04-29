@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using System.Linq;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Crayon
 {
@@ -39,6 +40,11 @@ namespace Crayon
 		public void LoadStyleSheetFromFile(string path)
 		{
 			_proxy.LoadFromFile (path);
+		}
+
+		public void LoadStyleSheetFromStream(Stream stream)
+		{
+			_proxy.LoadFromStream(stream);
 		}
 
 		public void LoadStyleSheetFromString(string content)

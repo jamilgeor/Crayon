@@ -12,15 +12,20 @@ namespace Crayon
 	{
 		public Stylesheet Stylesheet{ get; private set; }
 
-		public void LoadFromFile(string path)
+		public void LoadFromStream (Stream stream)
 		{
 			var parser = new StylesheetParser ();
 
-			using (var stream = new FileStream(path, FileMode.Open)) {
-				parser.Parse(stream);
-			}
+			parser.Parse(stream);
 
 			Stylesheet = parser.Stylesheet;
+		}
+
+		public void LoadFromFile(string path)
+		{
+			using (var stream = new FileStream(path, FileMode.Open)) {
+				LoadFromStream(stream);
+			}
 		}
 
 		public void LoadFromString(string content)

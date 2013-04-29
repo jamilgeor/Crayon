@@ -14,6 +14,7 @@ namespace Crayon.Sample
 			base.ViewDidLoad ();
 
 			NavigationBar.SetStyleId("sample-navigation");
+			View.SetStyleId ("sample-navigator");
 
 			_table = new UITableViewExample ();
 			_table.View.SetStyleId ("sample-table");

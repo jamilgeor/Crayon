@@ -36,9 +36,14 @@ namespace Crayon
 			Current = this;
 		}
 
-		public void LoadStyleSheet(string path)
+		public void LoadStyleSheetFromFile(string path)
 		{
 			_proxy.LoadFromFile (path);
+		}
+
+		public void LoadStyleSheetFromString(string content)
+		{
+			_proxy.LoadFromString(content);
 		}
 
 		public void SetStyleById(string styleId, object targetControl)

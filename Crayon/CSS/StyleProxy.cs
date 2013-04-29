@@ -23,6 +23,15 @@ namespace Crayon
 			Stylesheet = parser.Stylesheet;
 		}
 
+		public void LoadFromString(string content)
+		{
+			var parser = new StylesheetParser();
+
+			parser.Parse (content);
+
+			Stylesheet = parser.Stylesheet;
+		}
+
 		public IEnumerable<StyleProperty> GetStylesById(string styleId)
 		{
 			return GetStyles (s => s.ID == styleId);

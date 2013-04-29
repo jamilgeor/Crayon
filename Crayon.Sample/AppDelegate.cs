@@ -36,7 +36,7 @@ namespace Crayon.Sample
 			_window = new UIWindow (UIScreen.MainScreen.Bounds);
 
 			_styleContext = new StyleContext (new IOSDeviceContext ());
-			_styleContext.LoadStyleSheet ("style.css");
+			_styleContext.LoadStyleSheetFromFile ("style.css");
 
 			_navigator = new ExampleNavigationController ();
 			_navigator.View.SetStyleId ("sample-navigator");

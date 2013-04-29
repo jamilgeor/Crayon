@@ -49,15 +49,14 @@ namespace Crayon.Test
 			[Test]
 			public void With_Inherited_Control_Type()
 			{
-				const int expectedNumberOfDecorators = 2;
+				const int expectedNumberOfDecorators = 1;
 				var control = new UIButton ();
 				
 				var result = ControlDecoratorFactory.Create (control);
 				
 				Assert.True (result.Any ());
 				Assert.AreEqual (expectedNumberOfDecorators, result.Count);
-				Assert.IsTrue (result[0] is UIViewDecorator);
-				Assert.IsTrue (result[1] is UIButtonDecorator);
+				Assert.IsTrue (result.First() is UIButtonDecorator);
 			}
 		}
 

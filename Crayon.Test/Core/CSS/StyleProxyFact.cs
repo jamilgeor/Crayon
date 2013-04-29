@@ -5,6 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 
 using Crayon;
+using System.Text;
 
 namespace Crayon.Test.Core
 {
@@ -37,6 +38,40 @@ namespace Crayon.Test.Core
 				var proxy = new StyleProxy ();
 
 				Assert.Throws(typeof(FileNotFoundException), () => proxy.LoadFromFile(path));
+			}
+		}
+
+		[TestFixture]
+		public class LoadFromStream
+		{
+			[Test]
+			public void Normal_Stream()
+			{
+				const string path = "simple.css";
+				
+				Assert.IsTrue (File.Exists(path));
+				
+				var proxy = new StyleProxy ();
+
+				using (var stream = new FileStream(path, FileMode.Open)) {
+					proxy.LoadFromStream(stream);
+				}
+				
+				Assert.IsTrue(proxy.Stylesheet.RuleSets.Any (s1 => s1.Selectors.Any(s => s.SimpleSelectors.Any(ss => ss.ID == "firstId"))));
+			}
+
+			[Test]
+			public void With_Corrupt_Stream()
+			{
+				const string content = "}}color: #FFFFFF;{{";
+
+				var proxy = new StyleProxy();
+
+				using (var stream = new MemoryStream(UTF8Encoding.Default.GetBytes(content))) {
+					proxy.LoadFromStream(stream);
+				}
+
+				Assert.IsFalse(proxy.Stylesheet.RuleSets.Any());
 			}
 		}
 

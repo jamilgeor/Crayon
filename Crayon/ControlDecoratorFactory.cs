@@ -7,6 +7,8 @@ namespace Crayon
 {
 	public class ControlDecoratorFactory : BaseFactory
 	{
+		static readonly Dictionary<Type, Assembly> _controlDecorators = new Dictionary<Type, Assembly>();
+
 		public static List<IControlDecorator> Create(object control)
 		{
 			var decorators = CreateDecoratorsForType(control.GetType());
@@ -18,13 +20,12 @@ namespace Crayon
 		{
 			var decorators = new List<IControlDecorator> ();
 
-			var factoryAssembly = Assembly.GetAssembly (StyleContext.Current.StyleFactory.GetType ());
-			
-			var types = factoryAssembly.GetTypes ();
-			
-			foreach (var decoratorType in types) {
-				if (CanDecorate(type, decoratorType))
-					decorators.Add((IControlDecorator)factoryAssembly.CreateInstance(decoratorType.FullName));
+			foreach (var valuePair in _controlDecorators) {
+				var decorator = valuePair.Key;
+				var assembly = valuePair.Value;
+
+				if (CanDecorate(type, decorator))
+					decorators.Add((IControlDecorator)assembly.CreateInstance(decorator.FullName));
 			}
 
 			if (!decorators.Any () && type.BaseType != typeof(object))
@@ -40,11 +41,16 @@ namespace Crayon
 			foreach (var attribute in attributes) {
 				var castAttribute = (ControlDecoratorAttribute)attribute;
 				
-				if (CanHandleExactType(type, castAttribute.ControlType))
+				if (type == castAttribute.ControlType)
 					return true;
 			}
 
 			return false;
+		}
+
+		public static void RegisterDecorator(Type decoratorType, Assembly assembly)
+		{
+			_controlDecorators.Add(decoratorType, assembly);
 		}
 	}
 }

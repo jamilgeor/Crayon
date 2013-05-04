@@ -8,19 +8,14 @@ namespace Crayon
 	{
 		protected static bool CanHandleType (Type type, Type typeToMatch)
 		{
-			if (type == typeToMatch) {
+			if (type == typeToMatch)
 				return true;
-			}
-			
+
+			//Recurse up inheritance tree if types don't match
 			if (type.BaseType != null)
 				return CanHandleType (type.BaseType, typeToMatch);
 			
 			return false;
-		}
-
-		protected static bool CanHandleExactType (Type type, Type typeToMatch)
-		{
-			return type == typeToMatch;
 		}
 	}
 }

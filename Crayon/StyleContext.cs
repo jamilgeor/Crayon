@@ -8,7 +8,7 @@ namespace Crayon
 {
 	public class StyleContext
 	{
-		internal IDeviceContext StyleFactory { get; private set; }
+		internal IDeviceContext DeviceContext { get; private set; }
 
 		IStyleProxy _proxy;
 		static StyleContext _current;
@@ -29,12 +29,22 @@ namespace Crayon
 			}
 		}
 
-		public StyleContext(IDeviceContext factory) : this(factory, new StyleProxy()){}
-		public StyleContext(IDeviceContext factory, IStyleProxy proxy)
+		public StyleContext(IDeviceContext deviceContext) : this(deviceContext, new StyleProxy()){}
+		public StyleContext(IDeviceContext deviceContext, IStyleProxy proxy)
 		{
-			StyleFactory = factory;
+			DeviceContext = deviceContext;
 			_proxy = proxy;
 			Current = this;
+
+			RegisterDefaultControlDectorators();
+		}
+
+		private void RegisterDefaultControlDectorators()
+		{
+			var assembly = Assembly.GetAssembly(DeviceContext.GetType());
+
+			foreach(var decoratorType in DeviceContext.GetControlDecorators())
+				ControlDecoratorFactory.RegisterDecorator(decoratorType, assembly);
 		}
 
 		public void LoadStyleSheetFromFile(string path)

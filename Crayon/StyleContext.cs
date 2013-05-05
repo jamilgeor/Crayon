@@ -11,6 +11,8 @@ namespace Crayon
 		internal IDeviceContext DeviceContext { get; private set; }
 
 		IStyleProxy _proxy;
+		IControlDecoratorFactory _decoratorFactory;
+
 		static StyleContext _current;
 
 		public static StyleContext Current 
@@ -29,11 +31,14 @@ namespace Crayon
 			}
 		}
 
-		public StyleContext(IDeviceContext deviceContext) : this(deviceContext, new StyleProxy()){}
-		public StyleContext(IDeviceContext deviceContext, IStyleProxy proxy)
+		public StyleContext(IDeviceContext deviceContext) : this(deviceContext, new StyleProxy(), new ControlDecoratorFactory()){}
+		public StyleContext(IDeviceContext deviceContext, IStyleProxy proxy, IControlDecoratorFactory decoratorFactory)
 		{
 			DeviceContext = deviceContext;
+
 			_proxy = proxy;
+			_decoratorFactory = decoratorFactory;
+
 			Current = this;
 
 			RegisterDefaultControlDectorators();
@@ -44,7 +49,7 @@ namespace Crayon
 			var assembly = Assembly.GetAssembly(DeviceContext.GetType());
 
 			foreach(var decoratorType in DeviceContext.GetControlDecorators())
-				ControlDecoratorFactory.RegisterDecorator(decoratorType, assembly);
+				_decoratorFactory.RegisterDecorator(decoratorType, assembly);
 		}
 
 		public void LoadStyleSheetFromFile(string path)
@@ -74,9 +79,9 @@ namespace Crayon
 			ProcessStyleProperties (_proxy.GetStylesByClass (styleClass), targetControl);
 		}
 
-		static void ProcessStyleProperties(IEnumerable<StyleProperty> styleProperties, object control)
+		void ProcessStyleProperties(IEnumerable<StyleProperty> styleProperties, object control)
 		{
-			var controlDecorators = ControlDecoratorFactory.Create (control);
+			var controlDecorators = _decoratorFactory.Create (control);
 
 			foreach (var controlDecorator in controlDecorators) {
 				controlDecorator.SetControl (control);

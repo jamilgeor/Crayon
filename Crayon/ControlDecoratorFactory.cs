@@ -5,18 +5,18 @@ using System.Linq;
 
 namespace Crayon
 {
-	public class ControlDecoratorFactory : BaseFactory
+	public class ControlDecoratorFactory : BaseFactory, IControlDecoratorFactory
 	{
-		static readonly Dictionary<Type, Assembly> _controlDecorators = new Dictionary<Type, Assembly>();
+		readonly Dictionary<Type, Assembly> _controlDecorators = new Dictionary<Type, Assembly>();
 
-		public static List<IControlDecorator> Create(object control)
+		public List<IControlDecorator> Create(object control)
 		{
 			var decorators = CreateDecoratorsForType(control.GetType());
 
 			return decorators;
 		}
 
-		static List<IControlDecorator> CreateDecoratorsForType(Type type)
+		List<IControlDecorator> CreateDecoratorsForType(Type type)
 		{
 			var decorators = new List<IControlDecorator> ();
 
@@ -48,7 +48,7 @@ namespace Crayon
 			return false;
 		}
 
-		public static void RegisterDecorator(Type decoratorType, Assembly assembly)
+		public void RegisterDecorator(Type decoratorType, Assembly assembly)
 		{
 			_controlDecorators.Add(decoratorType, assembly);
 		}

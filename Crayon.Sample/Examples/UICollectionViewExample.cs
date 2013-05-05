@@ -13,7 +13,6 @@ namespace Crayon.Sample
 	public class UICollectionViewExample : UICollectionViewController
 	{
 		readonly static NSString CellId = new NSString("ExampleCellId");
-		readonly static NSString HeaderId = new NSString ("ExampleHeaderId");
 
 		List<CollectionItem> _items;
 

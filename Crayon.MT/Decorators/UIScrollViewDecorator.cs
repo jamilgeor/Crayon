@@ -3,7 +3,7 @@ using MonoTouch.UIKit;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UIScrollView))]
+	[ControlDecorator(typeof(UIScrollView), "scroll")]
 	public class UIScrollViewDecorator : BaseDecorator<UIScrollView>
 	{
 	}

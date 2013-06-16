@@ -3,7 +3,7 @@ using MonoTouch.UIKit;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UIProgressView))]
+	[ControlDecorator(typeof(UIProgressView), "progress")]
 	public class UIProgressViewDecorator : BaseDecorator<UIProgressView>
 	{
 	}

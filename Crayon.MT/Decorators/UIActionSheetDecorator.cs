@@ -8,7 +8,7 @@ using Crayon;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UIActionSheet))]
+	[ControlDecorator(typeof(UIActionSheet), "action-sheet")]
 	public class UIActionSheetDecorator : BaseDecorator<UIActionSheet>
 	{
 		void SetBackgroundColor(CGColor color)
@@ -42,6 +42,9 @@ namespace Crayon.MT
 		[StyleProperty(typeof(StyleBackgroundColorProperty))]
 		public override void SetBackgroundColor(StyleBackgroundColorProperty property)
 		{
+			if (property.Global)
+				return;
+
 			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 
 			SetBackgroundColor (color.CGColor);
@@ -50,6 +53,9 @@ namespace Crayon.MT
 		[StyleProperty(typeof(StyleBackgroundImageProperty))]
 		public override void SetBackgroundImage(StyleBackgroundImageProperty property)
 		{
+			if (property.Global)
+				return;
+
 			var image = UIImage.FromFile (property.ImageUrl);
 
 			SetBackgroundImage (image.CGImage, 1f);
@@ -58,6 +64,9 @@ namespace Crayon.MT
 		[StyleProperty(typeof(StyleBackgroundOpacityProperty))]
 		public void SetBackgroundOpacity(StyleBackgroundOpacityProperty property)
 		{
+			if (property.Global)
+				return;
+
 			SetBackgroundImage (View.Layer.Contents, property.Opacity);
 		}
 	}

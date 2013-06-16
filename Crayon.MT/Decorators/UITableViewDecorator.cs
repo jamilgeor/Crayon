@@ -4,7 +4,7 @@ using Crayon;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UITableView))]
+	[ControlDecorator(typeof(UITableView), "table")]
 	public class UITableViewDecorator : BaseDecorator<UITableView>
 	{
 	}

@@ -8,6 +8,7 @@ namespace Crayon
 	{
 		public string Name { get; set; }
 		public object Value { get; set; }
+		public bool Global { get; set; }
 
 		public abstract void SetValue (string value);
 	}

@@ -3,13 +3,18 @@ using MonoTouch.UIKit;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UISearchBar))]
+	[ControlDecorator(typeof(UISearchBar), "search-bar")]
 	public class UISearchBarDecorator : BaseDecorator<UISearchBar>
 	{
 		[StyleProperty(typeof(StyleBackgroundColorProperty))]
 		public override void SetBackgroundColor (StyleBackgroundColorProperty property)
 		{
-			View.TintColor = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
+			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
+
+			if (property.Global)
+				UISearchBar.Appearance.TintColor = color;
+			else
+				View.TintColor = color;
 		}
 	}
 }

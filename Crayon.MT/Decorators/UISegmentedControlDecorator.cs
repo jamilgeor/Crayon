@@ -3,7 +3,7 @@ using MonoTouch.UIKit;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UISegmentedControl))]
+	[ControlDecorator(typeof(UISegmentedControl), "segmented-control")]
 	public class UISegmentedControlDecorator : BaseDecorator<UISegmentedControl>
 	{
 		[StyleProperty(typeof(StyleFontFamilyProperty))]
@@ -13,7 +13,10 @@ namespace Crayon.MT
 
 			textAttributes.Font = UIFont.FromName(property.FontName, textAttributes.Font == null ? UIFont.SystemFontSize : textAttributes.Font.PointSize);
 		
-			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+			if (property.Global)
+				UISegmentedControl.Appearance.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+			else
+				View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
 		}
 
 		[StyleProperty(typeof(StyleFontSizeProperty))]
@@ -33,7 +36,10 @@ namespace Crayon.MT
 
 			textAttributes.TextColor = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 
-			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+			if (property.Global)
+				UISegmentedControl.Appearance.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+			else
+				View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
 		}
 	}
 }

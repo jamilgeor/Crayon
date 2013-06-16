@@ -16,6 +16,13 @@ namespace Crayon
 			return decorators;
 		}
 
+		public List<IControlDecorator> Create(Type type)
+		{
+			var decorators = CreateDecoratorsForType(type);
+
+			return decorators;
+		}
+
 		List<IControlDecorator> CreateDecoratorsForType(Type type)
 		{
 			var decorators = new List<IControlDecorator> ();

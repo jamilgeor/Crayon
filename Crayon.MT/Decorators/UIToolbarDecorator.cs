@@ -4,19 +4,27 @@ using MonoTouch.UIKit;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UIToolbar))]
+	[ControlDecorator(typeof(UIToolbar), "toolbar")]
 	public class UIToolbarDecorator : BaseDecorator<UIToolbar>
 	{
 		[StyleProperty(typeof(StyleBackgroundColorProperty))]
 		public override void SetBackgroundColor (StyleBackgroundColorProperty property)
 		{
-			View.TintColor = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
+			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
+
+			if (property.Global)
+				UIToolbar.Appearance.TintColor = color;
+			else
+				View.TintColor = color;
 		}
 
 		[StyleProperty(typeof(StyleBackgroundImageProperty))]
 		public override void SetBackgroundImage(StyleBackgroundImageProperty property)
 		{
-			View.SetBackgroundImage (UIImage.FromFile (property.ImageUrl), UIToolbarPosition.Any, UIBarMetrics.Default);
+			if (property.Global)
+				UIToolbar.Appearance.SetBackgroundImage (UIImage.FromFile (property.ImageUrl), UIToolbarPosition.Any, UIBarMetrics.Default);
+			else
+				View.SetBackgroundImage (UIImage.FromFile (property.ImageUrl), UIToolbarPosition.Any, UIBarMetrics.Default);
 		}
 	}
 }

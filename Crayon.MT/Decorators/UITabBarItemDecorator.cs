@@ -3,7 +3,7 @@ using MonoTouch.UIKit;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UITabBarItem))]
+	[ControlDecorator(typeof(UITabBarItem), "tab-bar-item")]
 	public class UITabBarItemDecorator : IControlDecorator
 	{
 		UITabBarItem View { get; set; }
@@ -13,14 +13,22 @@ namespace Crayon.MT
 			View = (UITabBarItem)control;
 		}
 
+		void SetTextAttributes(UITextAttributes textAttributes, StyleProperty property)
+		{
+			if (property.Global)
+				return;
+
+			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+		}
+
 		[StyleProperty(typeof(StyleFontFamilyProperty))]
 		public void SetFontFace(StyleFontFamilyProperty property)
 		{
 			var textAttributes = View.GetTitleTextAttributes(UIControlState.Normal);
 			
 			textAttributes.Font = UIFont.FromName(property.FontName, textAttributes.Font == null ? UIFont.SystemFontSize : textAttributes.Font.PointSize);
-			
-			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+
+			SetTextAttributes (textAttributes, property);
 		}
 		
 		[StyleProperty(typeof(StyleFontSizeProperty))]
@@ -29,8 +37,8 @@ namespace Crayon.MT
 			var textAttributes = View.GetTitleTextAttributes(UIControlState.Normal);
 			
 			textAttributes.Font = UIFont.FromName(textAttributes.Font == null ? Defaults.FontName : textAttributes.Font.Name, property.Size);
-			
-			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+
+			SetTextAttributes (textAttributes, property);
 		}
 		
 		[StyleProperty(typeof(StyleColorProperty))]
@@ -39,8 +47,8 @@ namespace Crayon.MT
 			var textAttributes = View.GetTitleTextAttributes(UIControlState.Normal);
 			
 			textAttributes.TextColor = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
-			
-			View.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
+
+			SetTextAttributes (textAttributes, property);
 		}
 	}
 }

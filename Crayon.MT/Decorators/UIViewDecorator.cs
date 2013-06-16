@@ -5,7 +5,7 @@ using Crayon;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UIView))]
+	[ControlDecorator(typeof(UIView), "view")]
 	public class UIViewDecorator : BaseDecorator<UIView>
 	{
 

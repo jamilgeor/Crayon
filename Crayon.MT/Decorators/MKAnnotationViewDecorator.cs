@@ -3,7 +3,7 @@ using MonoTouch.MapKit;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(MKAnnotationView))]
+	[ControlDecorator(typeof(MKAnnotationView), "annotation")]
 	public class MKAnnotationViewDecorator : BaseDecorator<MKAnnotationView>
 	{
 	}

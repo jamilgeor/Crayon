@@ -5,7 +5,7 @@ using Crayon;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UILabel))]
+	[ControlDecorator(typeof(UILabel), "label")]
 	public class UILabelDecorator : BaseDecorator<UILabel>
 	{
 		[StyleProperty(typeof(StyleColorProperty))]
@@ -13,25 +13,37 @@ namespace Crayon.MT
 		{
 			var color = UIColor.FromRGBA (property.Color.R, property.Color.G, property.Color.B, property.Color.A);
 
-			View.TextColor = color;
+			if (property.Global)
+				UILabel.Appearance.TextColor = color;
+			else
+				View.TextColor = color;
 		}
 
 		[StyleProperty(typeof(StyleTextAlignProperty))]
 		public void SetTextAlignment(StyleTextAlignProperty property)
 		{
+			if (property.Global)
+				return;
+
 			View.TextAlignment = Helpers.ConvertAlignment(property.Alignment);
 		}
 
 		[StyleProperty(typeof(StyleFontFamilyProperty))]
 		public void SetFontFace(StyleFontFamilyProperty property)
 		{
-			View.Font = UIFont.FromName (property.FontName, View.Font.PointSize);
+			if(property.Global)
+				UILabel.Appearance.Font = UIFont.FromName (property.FontName, View.Font.PointSize);
+			else
+				View.Font = UIFont.FromName (property.FontName, View.Font.PointSize);
 		}
 
 		[StyleProperty(typeof(StyleFontSizeProperty))]
 		public void SetFontSize(StyleFontSizeProperty property)
 		{
-			View.Font = UIFont.FromName (View.Font.Name, property.Size);
+			if(property.Global)
+				UILabel.Appearance.Font = UIFont.FromName (View.Font.Name, property.Size);
+			else
+				View.Font = UIFont.FromName (View.Font.Name, property.Size);
 		}
 	}
 }

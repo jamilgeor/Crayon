@@ -4,7 +4,7 @@ using Crayon;
 
 namespace Crayon.MT
 {
-	[ControlDecorator(typeof(UIImageView))]
+	[ControlDecorator(typeof(UIImageView), "image")]
 	public class UIImageViewDecorator : BaseDecorator<UIImageView>
 	{
 	}

@@ -9,6 +9,8 @@ namespace Crayon
 	{
 		readonly Dictionary<Type, Assembly> _controlDecorators = new Dictionary<Type, Assembly>();
 
+		public Dictionary<Type, Assembly> ControlDecorators { get { return _controlDecorators; } }
+
 		public List<IControlDecorator> Create(object control)
 		{
 			var decorators = CreateDecoratorsForType(control.GetType());

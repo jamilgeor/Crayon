@@ -12,6 +12,7 @@ namespace Crayon
 		IEnumerable<StyleProperty> GetStylesById (string styleId);
 		IEnumerable<StyleProperty> GetStylesByClass (string classId);
 		IEnumerable<StyleProperty> GetGlobalStyles();
+		IEnumerable<StyleProperty> GetGlobalControlStyles(string controlName);
 	}
 }
 

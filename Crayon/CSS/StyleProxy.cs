@@ -52,6 +52,11 @@ namespace Crayon
 			return GetStyles (s => s.ElementName == "*");
 		}
 
+		public IEnumerable<StyleProperty> GetGlobalControlStyles(string controlName)
+		{
+			return GetStyles (s => s.ElementName == controlName);
+		}
+
 		IEnumerable<StyleProperty> GetStyles(Func<SimpleSelector, bool> filter)
 		{
 			var properties = new List<StyleProperty> ();

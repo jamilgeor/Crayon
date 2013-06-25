@@ -44,7 +44,7 @@ namespace Crayon
 			RegisterDefaultControlDectorators();
 		}
 
-		private void RegisterDefaultControlDectorators()
+		void RegisterDefaultControlDectorators()
 		{
 			var assembly = Assembly.GetAssembly(DeviceContext.GetType());
 
@@ -55,16 +55,19 @@ namespace Crayon
 		public void LoadStyleSheetFromFile(string path)
 		{
 			_proxy.LoadFromFile (path);
+			ProcessGlobalControlSelectors ();
 		}
 
 		public void LoadStyleSheetFromStream(Stream stream)
 		{
 			_proxy.LoadFromStream(stream);
+			ProcessGlobalControlSelectors ();
 		}
 
 		public void LoadStyleSheetFromString(string content)
 		{
 			_proxy.LoadFromString(content);
+			ProcessGlobalControlSelectors ();
 		}
 
 		public void SetStyleById(string styleId, object targetControl)
@@ -77,6 +80,26 @@ namespace Crayon
 		{
 			ProcessStyleProperties (_proxy.GetGlobalStyles (), targetControl);
 			ProcessStyleProperties (_proxy.GetStylesByClass (styleClass), targetControl);
+		}
+
+		void ProcessGlobalControlSelectors()
+		{
+			foreach(var decoratorType in _decoratorFactory.ControlDecorators)
+			{
+				var decoratorAttributes = decoratorType.Key.GetCustomAttributes(typeof(ControlDecoratorAttribute), false);
+
+				if (!decoratorAttributes.Any () || !(decoratorAttributes.First () is ControlDecoratorAttribute))
+					continue;
+
+				var controlName = (decoratorAttributes.First() as ControlDecoratorAttribute).GlobalSelector;
+
+				var styleProperties = _proxy.GetGlobalControlStyles (controlName);
+
+				foreach (var property in styleProperties) {
+					property.Global = true;
+					InvokeStylePropertySetter((IControlDecorator)decoratorType.Value.CreateInstance(decoratorType.Key.FullName), property);
+				}
+			}
 		}
 
 		void ProcessStyleProperties(IEnumerable<StyleProperty> styleProperties, object control)

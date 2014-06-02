@@ -149,6 +149,125 @@ namespace Crayon
 		}
 	}
 
+	[StyleTerm("padding")]
+	public class StylePaddingProperty : StyleProperty
+	{
+		public Rectangle Padding { get { return (Rectangle)Value; } }
+
+		public override void SetValue(string value)
+		{
+			int top, right, bottom, left = 0f;
+			var points = value.Split (' ');
+
+			if (points.Length > 0)
+				top = int.Parse(points [0]);
+
+			if (points.Length > 1)
+				right = int.Parse(points [1]);
+
+			if (points.Length > 2)
+				bottom = int.Parse(points [2]);
+
+			if (points.Length > 3)
+				left = int.Parse(points [3]);
+
+			Value = new Rectangle(left, top, left + ;
+		}
+	}
+
+	[StyleTerm("padding-top")]
+	public class StylePaddingTopProperty : StyleProperty
+	{
+		public int Padding { get { return (int)Value; } }
+
+		public override void SetValue (string value)
+		{
+			Value = int.Parse (value);
+		}
+	}
+
+	[StyleTerm("padding-right")]
+	public class StylePaddingRightProperty : StyleProperty
+	{
+		public int Padding { get { return (int)Value; } }
+
+		public override void SetValue (string value)
+		{
+			Value = int.Parse (value);
+		}
+	}
+
+	[StyleTerm("padding-bottom")]
+	public class StylePaddingBottomProperty : StyleProperty
+	{
+		public int Padding { get { return (int)Value; } }
+
+		public override void SetValue (string value)
+		{
+			Value = int.Parse (value);
+		}
+	}
+
+	[StyleTerm("padding-left")]
+	public class StylePaddingLeftProperty : StyleProperty
+	{
+		public int Padding { get { return (int)Value; } }
+
+		public override void SetValue (string value)
+		{
+			Value = int.Parse (value);
+		}
+	}
+
+	[StyleTerm("tint")]
+	public class StyleTintProperty : StyleColorProperty
+	{
+	}
+
+	[StyleTerm("has-shadow")]
+	public class StyleHasShadowProperty : StyleProperty
+	{
+		public bool HasShadow { get { return (bool)Value; } }
+
+		public override void SetValue(string value)
+		{
+			Value = bool.Parse (value);
+		}
+	}
+
+	[StyleTerm("overflow")]
+	public class StyleOverflowProperty : StyleProperty
+	{
+		public bool Scroll { get { return (bool)Value; } }
+
+		public override void SetValue(string value)
+		{
+			Value = value.Contains ("scroll");
+		}
+	}
+
+	[StyleTerm("overflow-x")]
+	public class StyleOverflowXProperty : StyleProperty
+	{
+		public bool Scroll { get { return (bool)Value; } }
+
+		public override void SetValue(string value)
+		{
+			Value = value.Contains ("scroll");
+		}
+	}
+
+	[StyleTerm("overflow-y")]
+	public class StyleOverflowYProperty : StyleProperty
+	{
+		public bool Scroll { get { return (bool)Value; } }
+
+		public override void SetValue(string value)
+		{
+			Value = value.Contains ("scroll");
+		}
+	}
+
 	public enum Alignment
 	{
 		Center,

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{61BE997E-F42C-49DC-993F-52CA81B669CB}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Crayon.Core</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BaseFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ControlDecoratorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Media.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StyleContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StyleProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StylePropertyFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\ColorTranslator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\IControlDecorator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\IControlDecoratorFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\IDeviceContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CSS\IStyleProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CSS\StyleProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attribute\ControlDecoratorAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attribute\StylePropertyAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Attribute\StyleTermAttribute.cs" />
+  </ItemGroup>
+</Project>

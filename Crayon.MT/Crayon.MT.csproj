@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{23019C63-90C0-4893-B612-497AA2C1745D}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -79,12 +79,6 @@
     <Compile Include="Decorators\MPVolumeViewDecorator.cs" />
     <Compile Include="Decorators\UICollectionViewCellDecorator.cs" />
     <Compile Include="Defaults.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Crayon\Crayon.csproj">
-      <Project>{F6AE7771-9F38-4B58-B1C6-CB342A87BECA}</Project>
-      <Name>Crayon</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Decorators\" />

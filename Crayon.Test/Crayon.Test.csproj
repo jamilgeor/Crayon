@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F41694FE-04E3-4C2A-8814-C20F25FF05FE}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -47,8 +47,10 @@
     <MtouchDebug>True</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <AssemblyName>MonkeyClothTest</AssemblyName>
-    <IpaPackageName />
-    <MtouchI18n />
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -112,10 +114,6 @@
     <BundleResource Include="Resources\simple.css" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Crayon\Crayon.csproj">
-      <Project>{F6AE7771-9F38-4B58-B1C6-CB342A87BECA}</Project>
-      <Name>Crayon</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Crayon.MT\Crayon.MT.csproj">
       <Project>{23019C63-90C0-4893-B612-497AA2C1745D}</Project>
       <Name>Crayon.MT</Name>

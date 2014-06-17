@@ -64,5 +64,7 @@
     <Compile Include="Attribute\StylePropertyAttribute.cs" />
     <Compile Include="Attribute\StyleTermAttribute.cs" />
     <Compile Include="Interface\IControlDecoratorFactory.cs" />
+    <Compile Include="Margin.cs" />
+    <Compile Include="Orientation.cs" />
   </ItemGroup>
 </Project>

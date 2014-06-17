@@ -38,14 +38,50 @@ namespace Crayon.Forms.MT
 		{
 			View.Padding.Left = property.Padding;
 		}
+
+		[StyleProperty(typeof(StyleWidthProperty))]
+		public void SetWidth(StyleWidthProperty property)
+		{
+			var bounds = View.Bounds;
+			bounds.Width = property.Width;
+
+			View.Layout (bounds);
+		}
+
+		[StyleProperty(typeof(StyleHeightProperty))]
+		public void SetHeight(StyleHeightProperty property)
+		{
+			var bounds = View.Bounds;
+			bounds.Height = property.Height;
+
+			View.Layout (bounds);
+		}
+
+		[StyleProperty(typeof(StyleTopProperty))]
+		public void SetTop(StyleTopProperty property)
+		{
+			var bounds = View.Bounds;
+			bounds.Top = property.Top;
+
+			View.Layout (bounds);
+		}
+
+		[StyleProperty(typeof(StyleLeftProperty))]
+		public void SetLeft(StyleLeftProperty property)
+		{
+			var bounds = View.Bounds;
+			bounds.Left = property.Left;
+
+			View.Layout (bounds);
+		}
 	}
 
-	[ControlDecorator(typeof(ContentView), "layout")]
+	[ControlDecorator(typeof(ContentView), "content-layout")]
 	public class ContentPageDecorator : LayoutDecorator<ContentView>
 	{
 	}
 
-	[ControlDecorator(typeof(Frame), "layout")]
+	[ControlDecorator(typeof(Frame), "frame-layout")]
 	public class FrameDecorator : LayoutDecorator<Frame>
 	{
 		[StyleProperty(typeof(StyleBorderColorProperty))]
@@ -61,7 +97,7 @@ namespace Crayon.Forms.MT
 		}
 	}
 
-	[ControlDecorator(typeof(ScrollView), "layout")]
+	[ControlDecorator(typeof(ScrollView), "scroll-layout")]
 	public class ScrollViewDecorator : LayoutDecorator<ScrollView>
 	{
 		[StyleProperty(typeof(StyleWidthProperty))]
@@ -95,6 +131,28 @@ namespace Crayon.Forms.MT
 		public void SetScrollOrientationVertical(StyleOverflowYProperty property)
 		{
 			View.Orientation = !property.Scroll ? ScrollOrientation.Horizontal : ScrollOrientation.Vertical;
+		}
+	}
+
+	[ControlDecorator(typeof(AbsoluteLayout), "absolute-layout")]
+	public class AbsoluteDecorator : LayoutDecorator<AbsoluteLayout>
+	{
+
+	}
+
+	[ControlDecorator(typeof(RelativeLayout), "relative-layout")]
+	public class RelativeDecorator : LayoutDecorator<RelativeLayout>
+	{
+
+	}
+
+	[ControlDecorator(typeof(StackLayout), "stack-layout")]
+	public class StackDecorator : LayoutDecorator<StackLayout>
+	{
+		[StyleProperty(typeof(StyleProxy))]
+		public void SetOrientation(StyleOrientationProperty property)
+		{
+			View.Orientation = property.Orientation == Orientation.Horizontal ? StackOrientation.Horizontal | StackOrientation.Vertical;
 		}
 	}
 }
